@@ -1,0 +1,1066 @@
+[
+    {
+        "name": "silo_lev2",
+        "x": -30.63545799255371,
+        "y": 4.215974807739258,
+        "z": 9.997547149658203,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "rock_17_lev2",
+        "x": 44.16205596923828,
+        "y": 0.7448527216911316,
+        "z": -38.54633331298828,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "bigrock3_lev2",
+        "x": 23.97193145751953,
+        "y": 4.057489395141602,
+        "z": -44.738075256347656,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "bigrock4_lev2",
+        "x": -41.709129333496094,
+        "y": 6.744661331176758,
+        "z": -42.268798828125,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "bigrock5_lev2",
+        "x": 37.68284606933594,
+        "y": 5.121560573577881,
+        "z": 38.61749267578125,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "rock_10_lev2",
+        "x": -17.46604347229004,
+        "y": 1.0138362646102905,
+        "z": 17.154233932495117,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "rock_11_lev2",
+        "x": -31.15018081665039,
+        "y": 1.0429036617279053,
+        "z": 44.865272521972656,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "rock_14_lev2",
+        "x": -44.82685470581055,
+        "y": 0.3921384811401367,
+        "z": -26.695261001586914,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "low_poly_cuboid_rock_012_lev2",
+        "x": -40.8675422668457,
+        "y": 4.918263912200928,
+        "z": 39.93944549560547,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "low_poly_cuboid_rock_006_lev2",
+        "x": 7.107580184936523,
+        "y": 0.9153618216514587,
+        "z": 29.101612091064453,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "simple_tree_5_lev2",
+        "x": -8.435017585754395,
+        "y": 3.344006299972534,
+        "z": -39.420196533203125,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "simple_tree_5.001_lev2",
+        "x": -3.6605334281921387,
+        "y": 3.344006299972534,
+        "z": -35.3016242980957,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "simple_tree_5.002_lev2",
+        "x": 35.912086486816406,
+        "y": 3.344006299972534,
+        "z": -46.78245162963867,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "bigrock4.001_lev2",
+        "x": 43.48604965209961,
+        "y": 4.759893417358398,
+        "z": -19.061809539794922,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "plane_lev2",
+        "x": -0.45347023010253906,
+        "y": 0.14174017310142517,
+        "z": -0.6161441802978516,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "cylinder.001_lev2",
+        "x": 47.8759880065918,
+        "y": 1.1313097476959229,
+        "z": -5.395684242248535,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "baked_lev2",
+        "x": 34.0463752746582,
+        "y": 0.3423145115375519,
+        "z": -22.683971405029297,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "rock_11.001_lev2",
+        "x": 47.3577880859375,
+        "y": 1.0429036617279053,
+        "z": 45.53399658203125,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "cylinder.002_lev2",
+        "x": 34.07206344604492,
+        "y": 1.1313097476959229,
+        "z": -28.724885940551758,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large_lev2",
+        "x": 12.0250883102417,
+        "y": 0.2825482487678528,
+        "z": -4.03574275970459,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-small_lev2",
+        "x": 24.44084358215332,
+        "y": 0.2707436680793762,
+        "z": -35.936092376708984,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight_lev2",
+        "x": 8.168371200561523,
+        "y": 0.27074310183525085,
+        "z": -5.731126308441162,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-striped-wide-straight-bump-up_lev2",
+        "x": 7.541801452636719,
+        "y": 0.4455040991306305,
+        "z": 9.432507514953613,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-wide-corner-large_lev2",
+        "x": -5.168799877166748,
+        "y": 0.301742821931839,
+        "z": -6.597268104553223,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.001_lev2",
+        "x": 13.56001091003418,
+        "y": 0.2707436680793762,
+        "z": 2.0186052322387695,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.001_lev2",
+        "x": 11.81069564819336,
+        "y": 0.2825482487678528,
+        "z": 7.873777866363525,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.002_lev2",
+        "x": -17.488380432128906,
+        "y": 0.2825482487678528,
+        "z": 7.525423049926758,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.003_lev2",
+        "x": 25.248779296875,
+        "y": 0.2707436680793762,
+        "z": -32.77989196777344,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.003_lev2",
+        "x": 18.092538833618164,
+        "y": 0.2825482487678528,
+        "z": -38.69268035888672,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.004_lev2",
+        "x": -9.846025466918945,
+        "y": 0.2825482487678528,
+        "z": -6.690788745880127,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.005_lev2",
+        "x": -1.9549460411071777,
+        "y": 0.2825482487678528,
+        "z": -1.8719910383224487,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.006_lev2",
+        "x": 4.221464157104492,
+        "y": 0.2825482487678528,
+        "z": -4.299884796142578,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "chimney_lev2",
+        "x": -3.2960472106933594,
+        "y": 1.4165441989898682,
+        "z": 5.890292167663574,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "chimney_detailed_lev2",
+        "x": 16.921873092651367,
+        "y": 1.298897624015808,
+        "z": 10.784274101257324,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "hangar_roundb_lev2",
+        "x": 8.68012523651123,
+        "y": 1.1211260557174683,
+        "z": 2.6931896209716797,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "pipe_ringhigh_lev2",
+        "x": -4.002159118652344,
+        "y": 1.15077543258667,
+        "z": -1.4777265787124634,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "pipe_ringhighend_lev2",
+        "x": -19.77686882019043,
+        "y": 0.8551033139228821,
+        "z": -7.141472816467285,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "rocket_basea_lev2",
+        "x": -5.9890875816345215,
+        "y": 0.8828524351119995,
+        "z": 9.691668510437012,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "rocket_baseb_lev2",
+        "x": -5.674877643585205,
+        "y": 0.8212589621543884,
+        "z": -5.283523082733154,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "rocket_sidesb_lev2",
+        "x": 8.687910079956055,
+        "y": 0.6769027709960938,
+        "z": 11.150145530700684,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "coin_structure_detailed_lev2",
+        "x": 4.005804061889648,
+        "y": 1.3172268867492676,
+        "z": 15.909136772155762,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "coin_structure_diagonal_lev2",
+        "x": -18.190834045410156,
+        "y": 0.9208789467811584,
+        "z": -2.064208745956421,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "hangar_roundb.002_lev2",
+        "x": 39.347835540771484,
+        "y": 1.1054943799972534,
+        "z": -8.880574226379395,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "cilinder2_lev2",
+        "x": 27.540618896484375,
+        "y": 2.276653528213501,
+        "z": 45.65386962890625,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.007_lev2",
+        "x": -20.73674964904785,
+        "y": 0.30086028575897217,
+        "z": 2.8954086303710938,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-small.001_lev2",
+        "x": -22.04762840270996,
+        "y": 0.3191072642803192,
+        "z": 10.069341659545898,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.004_lev2",
+        "x": -21.223615646362305,
+        "y": 0.3191072642803192,
+        "z": 13.22152328491211,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.008_lev2",
+        "x": -25.51874542236328,
+        "y": 0.33091071248054504,
+        "z": 7.517906188964844,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.009_lev2",
+        "x": -25.43031883239746,
+        "y": 0.33091071248054504,
+        "z": 2.8084964752197266,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.005_lev2",
+        "x": 13.56001091003418,
+        "y": 0.2707436680793762,
+        "z": 2.0186052322387695,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.006_lev2",
+        "x": -21.295114517211914,
+        "y": 0.2707436680793762,
+        "z": 18.88146209716797,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.007_lev2",
+        "x": -21.392148971557617,
+        "y": 0.2707436680793762,
+        "z": 26.19782257080078,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.008_lev2",
+        "x": -21.489721298217773,
+        "y": 0.2707436680793762,
+        "z": 33.55461502075195,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.010_lev2",
+        "x": -19.858667373657227,
+        "y": 0.2825482487678528,
+        "z": 39.491661071777344,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-striped-wide-straight-bump-up.001_lev2",
+        "x": 4.509975433349609,
+        "y": 0.45692920684814453,
+        "z": 41.367496490478516,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.011_lev2",
+        "x": 8.84786605834961,
+        "y": 0.2939738631248474,
+        "z": 39.817440032958984,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.010_lev2",
+        "x": 10.597824096679688,
+        "y": 0.2821703255176544,
+        "z": 33.91560745239258,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.011_lev2",
+        "x": 16.263660430908203,
+        "y": 0.28447091579437256,
+        "z": 26.303939819335938,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.012_lev2",
+        "x": 12.341253280639648,
+        "y": 0.2962738573551178,
+        "z": 27.869976043701172,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.012_lev2",
+        "x": 23.027278900146484,
+        "y": 0.28423982858657837,
+        "z": 26.394235610961914,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.013_lev2",
+        "x": 11.81069564819336,
+        "y": 0.2825482487678528,
+        "z": 7.873777866363525,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.013_lev2",
+        "x": 13.56001091003418,
+        "y": 0.2707436680793762,
+        "z": 2.0186052322387695,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.014_lev2",
+        "x": 11.81069564819336,
+        "y": 0.2825482487678528,
+        "z": 7.873777866363525,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.014_lev2",
+        "x": 13.56001091003418,
+        "y": 0.2707436680793762,
+        "z": 2.0186052322387695,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.015_lev2",
+        "x": 30.550228118896484,
+        "y": 0.2986696660518646,
+        "z": 24.8914794921875,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.015_lev2",
+        "x": 32.29961395263672,
+        "y": 0.28886520862579346,
+        "z": 19.028806686401367,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.016_lev2",
+        "x": 32.59634780883789,
+        "y": 0.2817087471485138,
+        "z": -2.976757049560547,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.017_lev2",
+        "x": 32.49931335449219,
+        "y": 0.2817087471485138,
+        "z": 4.339605331420898,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.018_lev2",
+        "x": 32.40174102783203,
+        "y": 0.2817087471485138,
+        "z": 11.69642448425293,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.016_lev2",
+        "x": 31.07499885559082,
+        "y": 0.30086028575897217,
+        "z": -9.035322189331055,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-wide-corner-large.001_lev2",
+        "x": 23.305980682373047,
+        "y": 0.301742821931839,
+        "z": -17.169355392456055,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.017_lev2",
+        "x": 26.46009063720703,
+        "y": 0.2825482487678528,
+        "z": -12.44127082824707,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.018_lev2",
+        "x": 18.69313621520996,
+        "y": 0.2825482487678528,
+        "z": -20.554168701171875,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.019_lev2",
+        "x": 23.526580810546875,
+        "y": 0.2865782082080841,
+        "z": -28.454219818115234,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.020_lev2",
+        "x": 18.77971076965332,
+        "y": 0.2825482487678528,
+        "z": -25.281538009643555,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.019_lev2",
+        "x": 21.78437042236328,
+        "y": 0.2707436680793762,
+        "z": -36.839542388916016,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-wide-corner-large.002_lev2",
+        "x": 15.151449203491211,
+        "y": 0.301742821931839,
+        "z": -43.580387115478516,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.021_lev2",
+        "x": 10.508445739746094,
+        "y": 0.2825482487678528,
+        "z": -43.885311126708984,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.020_lev2",
+        "x": 5.192848205566406,
+        "y": 0.2707436680793762,
+        "z": -39.689842224121094,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.021_lev2",
+        "x": 2.110149383544922,
+        "y": 0.2707436680793762,
+        "z": -39.73072814941406,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.022_lev2",
+        "x": -0.9545440673828125,
+        "y": 0.2707436680793762,
+        "z": -39.7713737487793,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.022_lev2",
+        "x": -8.317657470703125,
+        "y": 0.2939738631248474,
+        "z": -27.84639549255371,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.023_lev2",
+        "x": -6.577264785766602,
+        "y": 0.2821703255176544,
+        "z": -33.028202056884766,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.023_lev2",
+        "x": -4.845325469970703,
+        "y": 0.2962738573551178,
+        "z": -38.20766067504883,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.024_lev2",
+        "x": -11.941936492919922,
+        "y": 0.2707436680793762,
+        "z": -26.2944393157959,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.025_lev2",
+        "x": -14.745466232299805,
+        "y": 0.2707436680793762,
+        "z": -26.33159637451172,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.026_lev2",
+        "x": -17.810068130493164,
+        "y": 0.2707436680793762,
+        "z": -26.372241973876953,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.024_lev2",
+        "x": -21.693967819213867,
+        "y": 0.2825482487678528,
+        "z": -28.095001220703125,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-wide-corner-large.003_lev2",
+        "x": -24.893407821655273,
+        "y": 0.31741246581077576,
+        "z": -32.7945671081543,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.025_lev2",
+        "x": -29.5836181640625,
+        "y": 0.30975091457366943,
+        "z": -32.913734436035156,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.027_lev2",
+        "x": -15.093581199645996,
+        "y": 0.2707436680793762,
+        "z": -2.4181365966796875,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.028_lev2",
+        "x": -18.15827751159668,
+        "y": 0.2707436680793762,
+        "z": -2.4587841033935547,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.026_lev2",
+        "x": -22.048192977905273,
+        "y": 0.2825482487678528,
+        "z": -4.154514312744141,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.029_lev2",
+        "x": -23.620933532714844,
+        "y": 0.2707436680793762,
+        "z": -8.48760986328125,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.030_lev2",
+        "x": -23.565326690673828,
+        "y": 0.2707436680793762,
+        "z": -12.479514122009277,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.031_lev2",
+        "x": -23.510921478271484,
+        "y": 0.2707436680793762,
+        "z": -16.44806480407715,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-wide-corner-large.004_lev2",
+        "x": -25.101085662841797,
+        "y": 0.301742821931839,
+        "z": -20.812816619873047,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.027_lev2",
+        "x": -29.742677688598633,
+        "y": 0.2825482487678528,
+        "z": -24.206195831298828,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.032_lev2",
+        "x": -31.29973030090332,
+        "y": 0.2707436680793762,
+        "z": -28.568933486938477,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "tree-pine-large.006_lev2",
+        "x": -41.56330871582031,
+        "y": 1.4000389575958252,
+        "z": -16.364959716796875,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "tree-pine-large.007_lev2",
+        "x": -39.917869567871094,
+        "y": 1.358280897140503,
+        "z": -16.612865447998047,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "tree-pine-large.009_lev2",
+        "x": -8.53436279296875,
+        "y": 1.3189327716827393,
+        "z": -24.961116790771484,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-small.004_lev2",
+        "x": 1.523123025894165,
+        "y": 0.2874414324760437,
+        "z": -1.0089266300201416,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-small.002_lev2",
+        "x": -12.426797866821289,
+        "y": 0.28324779868125916,
+        "z": -3.2262935638427734,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-small.003_lev2",
+        "x": 7.8601531982421875,
+        "y": 0.28324779868125916,
+        "z": -40.49736785888672,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.009_lev2",
+        "x": 1.2220420837402344,
+        "y": 0.2707436680793762,
+        "z": 41.34661102294922,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.033_lev2",
+        "x": -1.6030921936035156,
+        "y": 0.2707436680793762,
+        "z": 41.309146881103516,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.034_lev2",
+        "x": -4.667766571044922,
+        "y": 0.2707436680793762,
+        "z": 41.26850128173828,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.035_lev2",
+        "x": -7.487033843994141,
+        "y": 0.2707436680793762,
+        "z": 41.23098373413086,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.036_lev2",
+        "x": -10.29056167602539,
+        "y": 0.2707436680793762,
+        "z": 41.19380187988281,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.037_lev2",
+        "x": -13.355276107788086,
+        "y": 0.2707436680793762,
+        "z": 41.15315628051758,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.038_lev2",
+        "x": -16.243833541870117,
+        "y": 0.2707436680793762,
+        "z": 41.11497116088867,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.002_lev2",
+        "x": 4.25212287902832,
+        "y": 0.2707436680793762,
+        "z": 9.38747501373291,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.039_lev2",
+        "x": 1.4269933700561523,
+        "y": 0.2707436680793762,
+        "z": 9.350008010864258,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.040_lev2",
+        "x": -1.6377010345458984,
+        "y": 0.2707436680793762,
+        "z": 9.309362411499023,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.041_lev2",
+        "x": -4.456935405731201,
+        "y": 0.2707436680793762,
+        "z": 9.27185344696045,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.042_lev2",
+        "x": -7.260451793670654,
+        "y": 0.2707436680793762,
+        "z": 9.234672546386719,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.043_lev2",
+        "x": -10.325181007385254,
+        "y": 0.2707436680793762,
+        "z": 9.194025039672852,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.044_lev2",
+        "x": -13.42238998413086,
+        "y": 0.2707436680793762,
+        "z": 9.152946472167969,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "unit-mansion_lev2",
+        "x": -45.777587890625,
+        "y": 0.4511833190917969,
+        "z": 10.541448593139648,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "building-house_lev2",
+        "x": 2.7846479415893555,
+        "y": -1.4958834648132324,
+        "z": -26.11358642578125,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "building-house.001_lev2",
+        "x": -2.484668731689453,
+        "y": -1.4958834648132324,
+        "z": -17.377613067626953,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "building-house.002_lev2",
+        "x": 7.776632308959961,
+        "y": -1.4958834648132324,
+        "z": -17.238948822021484,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "unit-mansion.001_lev2",
+        "x": -45.777587890625,
+        "y": 0.4511833190917969,
+        "z": 21.645734786987305,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "unit-mansion.002_lev2",
+        "x": -45.777587890625,
+        "y": 0.4511833190917969,
+        "z": -0.6865558624267578,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "building-dock_lev2",
+        "x": -5.161779880523682,
+        "y": -0.7549902200698853,
+        "z": 20.935218811035156,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "building-tower_lev2",
+        "x": 4.92018985748291,
+        "y": -1.5509321689605713,
+        "z": 21.06742286682129,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "unit-mansion.003_lev2",
+        "x": 46.09760284423828,
+        "y": 0.4511833190917969,
+        "z": 10.458969116210938,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "unit-mansion.004_lev2",
+        "x": 46.09760284423828,
+        "y": 0.4511833190917969,
+        "z": -0.6453167796134949,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "unit-mansion.005_lev2",
+        "x": 46.09760284423828,
+        "y": 0.4511833190917969,
+        "z": 21.686973571777344,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "cube_lev2",
+        "x": 24.330862045288086,
+        "y": 2.571639060974121,
+        "z": 20.375165939331055,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "cube.001_lev2",
+        "x": 24.330862045288086,
+        "y": 2.571639060974121,
+        "z": -5.203972816467285,
+        "level": 2,
+        "role": "default"
+    },
+    {
+        "name": "cube.002_lev2",
+        "x": 24.30171775817871,
+        "y": 0.4963843822479248,
+        "z": 7.500921726226807,
+        "level": 2,
+        "role": "default"
+    }
+]

@@ -1,0 +1,2610 @@
+[
+    {
+        "name": "building-type-q_lev1",
+        "x": -4.570429801940918,
+        "y": 0.0,
+        "z": -10.461522102355957,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "building-type-s_lev1",
+        "x": -32.36851501464844,
+        "y": 0.0,
+        "z": 2.7433643341064453,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "building-type-h_lev1",
+        "x": -34.392059326171875,
+        "y": 0.0,
+        "z": -3.531315326690674,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "prop_woodenfence_extension2_lev1",
+        "x": -6.415900230407715,
+        "y": 0.0,
+        "z": -5.7634077072143555,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "prop_woodenfence_extension2.001_lev1",
+        "x": -4.127339839935303,
+        "y": 0.0,
+        "z": -5.7634077072143555,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "prop_woodenfence_extension2.002_lev1",
+        "x": -2.2955245971679688,
+        "y": 0.0,
+        "z": -5.7634077072143555,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "prop_woodenfence_extension2.003_lev1",
+        "x": -0.5311837196350098,
+        "y": 0.0,
+        "z": -5.7634077072143555,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "prop_woodenfence_extension2.004_lev1",
+        "x": -0.5311837196350098,
+        "y": 0.0,
+        "z": -5.7634077072143555,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "prop_woodenfence_extension2.005_lev1",
+        "x": -5.446037292480469,
+        "y": 0.0,
+        "z": -14.73264217376709,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "prop_woodenfence_extension2.006_lev1",
+        "x": -7.18747615814209,
+        "y": 0.0,
+        "z": -14.586254119873047,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "prop_woodenfence_extension2.007_lev1",
+        "x": -3.216075897216797,
+        "y": 0.0,
+        "z": -14.586254119873047,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "floor_wooddark_half3_lev1",
+        "x": -2.0265467166900635,
+        "y": 0.3270196318626404,
+        "z": 0.08196450769901276,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "floor_wooddark_half3.001_lev1",
+        "x": 0.12553000450134277,
+        "y": 0.3270196318626404,
+        "z": 1.7635291814804077,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "frontwheel_r_lev1",
+        "x": 0.0,
+        "y": 0.0,
+        "z": -17.84861183166504,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "backwheels_lev1",
+        "x": 0.0,
+        "y": 0.0,
+        "z": -17.84861183166504,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "frontwheel_l_lev1",
+        "x": 0.0,
+        "y": 0.0,
+        "z": -17.84861183166504,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "truck_armored_lev1",
+        "x": 0.0,
+        "y": 0.0,
+        "z": -17.84861183166504,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "backwheels.001_lev1",
+        "x": -43.276432037353516,
+        "y": 0.0,
+        "z": -0.0,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "frontwheel_r.001_lev1",
+        "x": -43.276432037353516,
+        "y": 0.0,
+        "z": -0.0,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "frontwheel_l.001_lev1",
+        "x": -43.276432037353516,
+        "y": 0.0,
+        "z": -0.0,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "pickup_lev1",
+        "x": -43.276432037353516,
+        "y": 0.0,
+        "z": -0.0,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "sports_armored_lev1",
+        "x": 19.580352783203125,
+        "y": 0.0,
+        "z": -0.0,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "backwheels.002_lev1",
+        "x": 19.580352783203125,
+        "y": 0.0,
+        "z": -0.0,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "frontwheel_r.002_lev1",
+        "x": 18.59579849243164,
+        "y": 0.4365701675415039,
+        "z": 1.762541651725769,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "frontwheel_l.002_lev1",
+        "x": 20.564905166625977,
+        "y": 0.43657028675079346,
+        "z": 1.7625428438186646,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "blood_3_lev1",
+        "x": -5.905034065246582,
+        "y": 0.1965939998626709,
+        "z": 0.5518869757652283,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "blood_3.001_lev1",
+        "x": -14.0813627243042,
+        "y": 0.1965939998626709,
+        "z": 0.5518869757652283,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "blood_3.002_lev1",
+        "x": -14.0813627243042,
+        "y": 0.1965939998626709,
+        "z": 8.938812255859375,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "chest_special_lev1",
+        "x": -19.27168846130371,
+        "y": 0.2095043659210205,
+        "z": -7.91529655456543,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "blood_1_lev1",
+        "x": -18.807504653930664,
+        "y": 0.40172669291496277,
+        "z": -14.07356071472168,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "blood_1.001_lev1",
+        "x": 33.4996223449707,
+        "y": 0.40172669291496277,
+        "z": -0.8562679886817932,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "blood_1.002_lev1",
+        "x": 38.47544860839844,
+        "y": 0.40172669291496277,
+        "z": 11.361321449279785,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "backwheels.003_lev1",
+        "x": -0.7696957588195801,
+        "y": 0.0,
+        "z": 20.075847625732422,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "frontwheel_r.003_lev1",
+        "x": 1.2491886615753174,
+        "y": 0.4365701675415039,
+        "z": 20.07735824584961,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "frontwheel_l.003_lev1",
+        "x": 0.2901988625526428,
+        "y": 0.43657028675079346,
+        "z": 18.35755729675293,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "sports_lev1",
+        "x": -0.7696957588195801,
+        "y": 0.0,
+        "z": 20.075847625732422,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "container_green_lev1",
+        "x": -17.593399047851562,
+        "y": 0.0,
+        "z": 21.71722412109375,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "couch_lev1",
+        "x": 11.097297668457031,
+        "y": 0.0,
+        "z": -1.3183531761169434,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "plasticbarrier_lev1",
+        "x": 17.256025314331055,
+        "y": 0.0,
+        "z": -0.0,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "plasticbarrier.001_lev1",
+        "x": 18.765653610229492,
+        "y": 0.0,
+        "z": 3.7435801029205322,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "plasticbarrier.002_lev1",
+        "x": 7.214453220367432,
+        "y": 0.052065882831811905,
+        "z": 4.4112396240234375,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "plasticbarrier.003_lev1",
+        "x": -3.7152328491210938,
+        "y": 0.0,
+        "z": 18.148897171020508,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "blood_3.003_lev1",
+        "x": 3.279292106628418,
+        "y": 0.1965939998626709,
+        "z": 17.651512145996094,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "street_straight_crack2_lev1",
+        "x": 2.721416711807251,
+        "y": 0.2486024647951126,
+        "z": 2.843524932861328,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "street_straight_lev1",
+        "x": 5.975091457366943,
+        "y": 0.154910147190094,
+        "z": 7.463728427886963,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "streetlights_lev1",
+        "x": 10.462703704833984,
+        "y": 0.0,
+        "z": 19.166168212890625,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "plasticbarrier.004_lev1",
+        "x": 5.380457878112793,
+        "y": 0.052065882831811905,
+        "z": 4.4112396240234375,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "plasticbarrier.005_lev1",
+        "x": 3.503681182861328,
+        "y": 0.052065882831811905,
+        "z": 4.4112396240234375,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "streetlights.001_lev1",
+        "x": 2.702906608581543,
+        "y": 0.0,
+        "z": -21.49117660522461,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "streetlights.002_lev1",
+        "x": 19.695737838745117,
+        "y": 0.0,
+        "z": -24.62619972229004,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "trafficcone_2_lev1",
+        "x": 0.0,
+        "y": 0.0,
+        "z": 21.888530731201172,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "trafficcone_2.001_lev1",
+        "x": -3.936781167984009,
+        "y": 0.0,
+        "z": 21.888530731201172,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "trafficcone_2.002_lev1",
+        "x": -3.9584012031555176,
+        "y": 0.0,
+        "z": -3.985658645629883,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "trafficcone_2.003_lev1",
+        "x": -8.449039459228516,
+        "y": 0.0,
+        "z": -3.985658645629883,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "container_green.001_lev1",
+        "x": -17.593399047851562,
+        "y": 0.0,
+        "z": -14.966236114501953,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "trafficcone_2.004_lev1",
+        "x": -3.936781167984009,
+        "y": 0.0,
+        "z": 21.888530731201172,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "trafficcone_2.005_lev1",
+        "x": -15.00662612915039,
+        "y": 0.0,
+        "z": -13.455465316772461,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "trafficcone_2.006_lev1",
+        "x": -17.224586486816406,
+        "y": 0.0,
+        "z": -11.240437507629395,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "pickup_armored_lev1",
+        "x": 8.136324882507324,
+        "y": 0.0,
+        "z": -18.160879135131836,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "backwheels.004_lev1",
+        "x": 8.136324882507324,
+        "y": 0.0,
+        "z": -18.160879135131836,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "frontwheel_r.004_lev1",
+        "x": 8.136324882507324,
+        "y": 0.0,
+        "z": -18.160879135131836,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "frontwheel_l.004_lev1",
+        "x": 8.136324882507324,
+        "y": 0.0,
+        "z": -18.160879135131836,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "couch.001_lev1",
+        "x": 11.097297668457031,
+        "y": 0.0,
+        "z": -17.962316513061523,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "blood_3.004_lev1",
+        "x": 3.279292106628418,
+        "y": 0.1965939998626709,
+        "z": -21.203102111816406,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "trashbag_2_lev1",
+        "x": -22.522872924804688,
+        "y": 0.0,
+        "z": -18.032981872558594,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "wheel_lev1",
+        "x": -23.205808639526367,
+        "y": 0.0,
+        "z": -0.0,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "wheel.001_lev1",
+        "x": -23.205808639526367,
+        "y": 0.0,
+        "z": -0.0,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "wheel.002_lev1",
+        "x": -16.625469207763672,
+        "y": 0.0,
+        "z": -8.439931869506836,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "wheel.003_lev1",
+        "x": -38.81940460205078,
+        "y": 0.0,
+        "z": -14.27051067352295,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "wheels_stack_lev1",
+        "x": -38.72180938720703,
+        "y": 0.0,
+        "z": -0.0,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "townsign_lev1",
+        "x": -12.956902503967285,
+        "y": 0.17975832521915436,
+        "z": -0.0,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "pipes_lev1",
+        "x": -33.778045654296875,
+        "y": 0.0,
+        "z": -14.96755313873291,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "barrel_lev1",
+        "x": 0.0,
+        "y": 0.0,
+        "z": 28.212726593017578,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "frontwheel_r.005_lev1",
+        "x": 27.95526123046875,
+        "y": 0.0,
+        "z": -27.671457290649414,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "backwheels.005_lev1",
+        "x": 27.95526123046875,
+        "y": 0.0,
+        "z": -27.671457290649414,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "frontwheel_l.005_lev1",
+        "x": 27.95526123046875,
+        "y": 0.0,
+        "z": -27.671457290649414,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "truck_armored.001_lev1",
+        "x": 27.95526123046875,
+        "y": 0.0,
+        "z": -27.671457290649414,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "plasticbarrier.006_lev1",
+        "x": 23.27198028564453,
+        "y": 0.0,
+        "z": -28.822538375854492,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "plasticbarrier.007_lev1",
+        "x": 23.27198028564453,
+        "y": 0.0,
+        "z": -24.707870483398438,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "coin_new_lev1",
+        "x": 0.0,
+        "y": 0.0,
+        "z": -0.0,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-small_lev1",
+        "x": 34.23968505859375,
+        "y": 0.2707436680793762,
+        "z": 23.176734924316406,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-striped-wide-straight-bump-up_lev1",
+        "x": -11.349031448364258,
+        "y": 0.4455040991306305,
+        "z": 6.880838871002197,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-wide-corner-large_lev1",
+        "x": 4.51077127456665,
+        "y": 0.301742821931839,
+        "z": -6.041224956512451,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.001_lev1",
+        "x": -3.8559701442718506,
+        "y": 0.2707436680793762,
+        "z": 12.80019760131836,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.001_lev1",
+        "x": -9.73382568359375,
+        "y": 0.2825482487678528,
+        "z": 11.128686904907227,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.002_lev1",
+        "x": -9.774055480957031,
+        "y": 0.2825482487678528,
+        "z": -18.17243003845215,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.003_lev1",
+        "x": 31.094478607177734,
+        "y": 0.2707436680793762,
+        "z": 24.026456832885742,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.003_lev1",
+        "x": 36.91184616088867,
+        "y": 0.2825482487678528,
+        "z": 16.792430877685547,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.004_lev1",
+        "x": 4.5422563552856445,
+        "y": 0.2825482487678528,
+        "z": -10.719280242919922,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.005_lev1",
+        "x": -0.17146918177604675,
+        "y": 0.2825482487678528,
+        "z": -2.764988660812378,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.007_lev1",
+        "x": -5.187526226043701,
+        "y": 0.30086028575897217,
+        "z": -21.481916427612305,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-small.001_lev1",
+        "x": -12.378214836120605,
+        "y": 0.3191072642803192,
+        "z": -22.697542190551758,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.004_lev1",
+        "x": -15.51918888092041,
+        "y": 0.3191072642803192,
+        "z": -21.831798553466797,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.008_lev1",
+        "x": -9.873032569885254,
+        "y": 0.33091071248054504,
+        "z": -26.202190399169922,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.009_lev1",
+        "x": -5.162866115570068,
+        "y": 0.33091071248054504,
+        "z": -26.176225662231445,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.005_lev1",
+        "x": -3.8559701442718506,
+        "y": 0.2707436680793762,
+        "z": 12.80019760131836,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.006_lev1",
+        "x": -21.179580688476562,
+        "y": 0.2707436680793762,
+        "z": -21.828231811523438,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.007_lev1",
+        "x": -28.496583938598633,
+        "y": 0.2707436680793762,
+        "z": -21.828231811523438,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.008_lev1",
+        "x": -35.85401916503906,
+        "y": 0.2707436680793762,
+        "z": -21.828231811523438,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.010_lev1",
+        "x": -41.768917083740234,
+        "y": 0.2825482487678528,
+        "z": -20.11858558654785,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-striped-wide-straight-bump-up.001_lev1",
+        "x": -43.321414947509766,
+        "y": 0.45692920684814453,
+        "z": 4.272789001464844,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.011_lev1",
+        "x": -41.71397018432617,
+        "y": 0.2939738631248474,
+        "z": 8.589739799499512,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.010_lev1",
+        "x": -35.789451599121094,
+        "y": 0.2821703255176544,
+        "z": 10.261275291442871,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.011_lev1",
+        "x": -28.103313446044922,
+        "y": 0.28447091579437256,
+        "z": 15.825675964355469,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.012_lev1",
+        "x": -29.72123146057129,
+        "y": 0.2962738573551178,
+        "z": 11.92437744140625,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.012_lev1",
+        "x": -28.103904724121094,
+        "y": 0.28423982858657837,
+        "z": 22.589893341064453,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.013_lev1",
+        "x": -9.73382568359375,
+        "y": 0.2825482487678528,
+        "z": 11.128686904907227,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.013_lev1",
+        "x": -3.8559701442718506,
+        "y": 0.2707436680793762,
+        "z": 12.80019760131836,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.014_lev1",
+        "x": -9.73382568359375,
+        "y": 0.2825482487678528,
+        "z": 11.128686904907227,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.014_lev1",
+        "x": -3.8559701442718506,
+        "y": 0.2707436680793762,
+        "z": 12.80019760131836,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.015_lev1",
+        "x": -26.501514434814453,
+        "y": 0.2986696660518646,
+        "z": 30.092254638671875,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.015_lev1",
+        "x": -20.616159439086914,
+        "y": 0.28886520862579346,
+        "z": 31.763736724853516,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.016_lev1",
+        "x": 1.3914061784744263,
+        "y": 0.2817087471485138,
+        "z": 31.768619537353516,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.017_lev1",
+        "x": -5.925601005554199,
+        "y": 0.2817087471485138,
+        "z": 31.768619537353516,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.018_lev1",
+        "x": -13.283065795898438,
+        "y": 0.2817087471485138,
+        "z": 31.768619537353516,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.016_lev1",
+        "x": 7.429261684417725,
+        "y": 0.30086028575897217,
+        "z": 30.167055130004883,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-wide-corner-large.001_lev1",
+        "x": 15.459551811218262,
+        "y": 0.301742821931839,
+        "z": 22.290849685668945,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.017_lev1",
+        "x": 10.773709297180176,
+        "y": 0.2825482487678528,
+        "z": 25.507383346557617,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.018_lev1",
+        "x": 18.782888412475586,
+        "y": 0.2825482487678528,
+        "z": 17.633522033691406,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.019_lev1",
+        "x": 26.74634552001953,
+        "y": 0.2865782082080841,
+        "z": 22.361774444580078,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.020_lev1",
+        "x": 23.51099395751953,
+        "y": 0.2825482487678528,
+        "z": 17.65739631652832,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.019_lev1",
+        "x": 35.107826232910156,
+        "y": 0.2707436680793762,
+        "z": 20.508514404296875,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-wide-corner-large.002_lev1",
+        "x": 41.7601203918457,
+        "y": 0.301742821931839,
+        "z": 13.78678035736084,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.021_lev1",
+        "x": 42.003440856933594,
+        "y": 0.2825482487678528,
+        "z": 9.140143394470215,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.020_lev1",
+        "x": 37.737850189208984,
+        "y": 0.2707436680793762,
+        "z": 3.880650281906128,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.021_lev1",
+        "x": 37.737850189208984,
+        "y": 0.2707436680793762,
+        "z": 0.7976810336112976,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.022_lev1",
+        "x": 37.737850189208984,
+        "y": 0.2707436680793762,
+        "z": -2.267279624938965,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.022_lev1",
+        "x": 25.716270446777344,
+        "y": 0.2939738631248474,
+        "z": -9.471601486206055,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.023_lev1",
+        "x": 30.92070198059082,
+        "y": 0.2821703255176544,
+        "z": -7.800081729888916,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.023_lev1",
+        "x": 36.122676849365234,
+        "y": 0.2962738573551178,
+        "z": -6.136984825134277,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.024_lev1",
+        "x": 24.11638641357422,
+        "y": 0.2707436680793762,
+        "z": -13.074982643127441,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.025_lev1",
+        "x": 24.116361618041992,
+        "y": 0.2707436680793762,
+        "z": -15.87875747680664,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.026_lev1",
+        "x": 24.116361618041992,
+        "y": 0.2707436680793762,
+        "z": -18.943626403808594,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.024_lev1",
+        "x": 25.78746223449707,
+        "y": 0.2825482487678528,
+        "z": -22.850034713745117,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-wide-corner-large.003_lev1",
+        "x": 30.444185256958008,
+        "y": 0.31741246581077576,
+        "z": -26.111515045166016,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.025_lev1",
+        "x": 30.501144409179688,
+        "y": 0.30975091457366943,
+        "z": -30.80289649963379,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.027_lev1",
+        "x": 0.20038941502571106,
+        "y": 0.2707436680793762,
+        "z": -15.909711837768555,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.028_lev1",
+        "x": 0.20038941502571106,
+        "y": 0.2707436680793762,
+        "z": -18.97467613220215,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.026_lev1",
+        "x": 1.8443844318389893,
+        "y": 0.2825482487678528,
+        "z": -22.886737823486328,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.029_lev1",
+        "x": 6.156241416931152,
+        "y": 0.2707436680793762,
+        "z": -24.516803741455078,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.030_lev1",
+        "x": 10.14853286743164,
+        "y": 0.2707436680793762,
+        "z": -24.51413917541504,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.031_lev1",
+        "x": 14.11745548248291,
+        "y": 0.2707436680793762,
+        "z": -24.512371063232422,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-wide-corner-large.004_lev1",
+        "x": 18.460735321044922,
+        "y": 0.301742821931839,
+        "z": -26.1602783203125,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-large.027_lev1",
+        "x": 21.792261123657227,
+        "y": 0.2825482487678528,
+        "z": -30.846464157104492,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.032_lev1",
+        "x": 26.13396644592285,
+        "y": 0.2707436680793762,
+        "z": -32.46123504638672,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-small.004_lev1",
+        "x": -0.9883329272270203,
+        "y": 0.2874414324760437,
+        "z": 0.7242202758789062,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-small.002_lev1",
+        "x": 1.0438411235809326,
+        "y": 0.28324779868125916,
+        "z": -13.25387954711914,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-corner-small.003_lev1",
+        "x": 38.58067321777344,
+        "y": 0.28324779868125916,
+        "z": 6.537013053894043,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.009_lev1",
+        "x": -43.344139099121094,
+        "y": 0.2707436680793762,
+        "z": 0.9848670363426208,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.033_lev1",
+        "x": -43.34414291381836,
+        "y": 0.2707436680793762,
+        "z": -1.8405143022537231,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.034_lev1",
+        "x": -43.34414291381836,
+        "y": 0.2707436680793762,
+        "z": -4.905457496643066,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.035_lev1",
+        "x": -43.344017028808594,
+        "y": 0.2707436680793762,
+        "z": -7.7249755859375,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.036_lev1",
+        "x": -43.344017028808594,
+        "y": 0.2707436680793762,
+        "z": -10.5287504196167,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.037_lev1",
+        "x": -43.344017028808594,
+        "y": 0.2707436680793762,
+        "z": -13.593734741210938,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.038_lev1",
+        "x": -43.34414291381836,
+        "y": 0.2707436680793762,
+        "z": -16.4825439453125,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.002_lev1",
+        "x": -11.34762954711914,
+        "y": 0.2707436680793762,
+        "z": 3.590853691101074,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.039_lev1",
+        "x": -11.347631454467773,
+        "y": 0.2707436680793762,
+        "z": 0.7654751539230347,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.040_lev1",
+        "x": -11.347631454467773,
+        "y": 0.2707436680793762,
+        "z": -2.2994885444641113,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.041_lev1",
+        "x": -11.347514152526855,
+        "y": 0.2707436680793762,
+        "z": -5.1189727783203125,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.042_lev1",
+        "x": -11.347515106201172,
+        "y": 0.2707436680793762,
+        "z": -7.922735214233398,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.043_lev1",
+        "x": -11.347515106201172,
+        "y": 0.2707436680793762,
+        "z": -10.987735748291016,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "track-road-wide-straight.044_lev1",
+        "x": -11.347515106201172,
+        "y": 0.2707436680793762,
+        "z": -14.085216522216797,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high-round_lev1",
+        "x": -9.265972137451172,
+        "y": 0.0,
+        "z": -0.0,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "wall-corner-diagonal_lev1",
+        "x": 4.014581680297852,
+        "y": 0.0,
+        "z": -7.937075138092041,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "wall-corner-diagonal-half_lev1",
+        "x": 2.905447006225586,
+        "y": 0.0,
+        "z": -6.598954200744629,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "watermill_lev1",
+        "x": -4.456389904022217,
+        "y": 2.690080404281616,
+        "z": 7.599850654602051,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.004_lev1",
+        "x": -0.9227376580238342,
+        "y": 0.0,
+        "z": -26.115394592285156,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.005_lev1",
+        "x": 2.147178888320923,
+        "y": 0.025264941155910492,
+        "z": -25.47489356994629,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.006_lev1",
+        "x": 0.3093867897987366,
+        "y": 0.025264941155910492,
+        "z": -24.624448776245117,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.007_lev1",
+        "x": 4.131570339202881,
+        "y": 0.025264941155910492,
+        "z": -26.177595138549805,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.008_lev1",
+        "x": 5.948850631713867,
+        "y": 0.025264941155910492,
+        "z": -26.177595138549805,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.009_lev1",
+        "x": 8.006278991699219,
+        "y": 0.025264941155910492,
+        "z": -26.177595138549805,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.010_lev1",
+        "x": 10.765052795410156,
+        "y": 0.025264941155910492,
+        "z": -26.177595138549805,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.011_lev1",
+        "x": 12.386773109436035,
+        "y": 0.025264941155910492,
+        "z": -26.177595138549805,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.012_lev1",
+        "x": 14.6180419921875,
+        "y": 0.025264941155910492,
+        "z": -26.177595138549805,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.013_lev1",
+        "x": 16.428302764892578,
+        "y": 0.025264941155910492,
+        "z": -26.177595138549805,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.014_lev1",
+        "x": 17.79340362548828,
+        "y": 0.025264941155910492,
+        "z": -27.44734764099121,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.015_lev1",
+        "x": 18.467544555664062,
+        "y": 0.025264941155910492,
+        "z": -28.886661529541016,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.016_lev1",
+        "x": 19.071372985839844,
+        "y": 0.025264941155910492,
+        "z": -30.754976272583008,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.017_lev1",
+        "x": 19.540855407714844,
+        "y": 0.06974387168884277,
+        "z": -31.992341995239258,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.018_lev1",
+        "x": 21.1458740234375,
+        "y": 0.06974387168884277,
+        "z": -33.000144958496094,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.019_lev1",
+        "x": 23.173675537109375,
+        "y": 0.06974387168884277,
+        "z": -33.904911041259766,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.020_lev1",
+        "x": 24.578414916992188,
+        "y": 0.06974387168884277,
+        "z": -33.904911041259766,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.021_lev1",
+        "x": 26.2678279876709,
+        "y": 0.06974387168884277,
+        "z": -33.904911041259766,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.022_lev1",
+        "x": 27.8670597076416,
+        "y": 0.06974387168884277,
+        "z": -33.904911041259766,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.023_lev1",
+        "x": 27.8670597076416,
+        "y": 0.06974387168884277,
+        "z": -33.904911041259766,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.024_lev1",
+        "x": 29.172372817993164,
+        "y": 0.06974387168884277,
+        "z": -33.904911041259766,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.025_lev1",
+        "x": 29.172372817993164,
+        "y": 0.06974387168884277,
+        "z": -33.904911041259766,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.026_lev1",
+        "x": 30.736425399780273,
+        "y": 0.06974387168884277,
+        "z": -33.55129623413086,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.027_lev1",
+        "x": 32.01453399658203,
+        "y": 0.06974387168884277,
+        "z": -32.643760681152344,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.028_lev1",
+        "x": 33.218711853027344,
+        "y": 0.06974387168884277,
+        "z": -31.875852584838867,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.029_lev1",
+        "x": 33.218711853027344,
+        "y": 0.06974387168884277,
+        "z": -30.725860595703125,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.030_lev1",
+        "x": 33.218711853027344,
+        "y": 0.06974387168884277,
+        "z": -29.401046752929688,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.031_lev1",
+        "x": 33.218711853027344,
+        "y": 0.06974387168884277,
+        "z": -27.87704849243164,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.032_lev1",
+        "x": 33.218711853027344,
+        "y": 0.06974387168884277,
+        "z": -26.05586051940918,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.033_lev1",
+        "x": 32.01522445678711,
+        "y": 0.06974387168884277,
+        "z": -24.87720489501953,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.034_lev1",
+        "x": 30.6796817779541,
+        "y": 0.06974387168884277,
+        "z": -23.755321502685547,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.035_lev1",
+        "x": 28.405216217041016,
+        "y": 0.06974387168884277,
+        "z": -22.851268768310547,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.036_lev1",
+        "x": 26.569948196411133,
+        "y": 0.06974387168884277,
+        "z": -22.395626068115234,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.037_lev1",
+        "x": 25.509090423583984,
+        "y": 0.06974387168884277,
+        "z": -21.078022003173828,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.038_lev1",
+        "x": 25.509090423583984,
+        "y": 0.06974387168884277,
+        "z": -19.38469696044922,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.039_lev1",
+        "x": 25.509090423583984,
+        "y": 0.06974387168884277,
+        "z": -17.85120391845703,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.040_lev1",
+        "x": 25.509090423583984,
+        "y": 0.06974387168884277,
+        "z": -16.0300350189209,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.041_lev1",
+        "x": 25.509090423583984,
+        "y": 0.06974387168884277,
+        "z": -14.2271089553833,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.042_lev1",
+        "x": 25.509090423583984,
+        "y": 0.06974387168884277,
+        "z": -12.166058540344238,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.043_lev1",
+        "x": 25.942668914794922,
+        "y": 0.06974387168884277,
+        "z": -10.5934419631958,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.044_lev1",
+        "x": 28.165863037109375,
+        "y": 0.06974387168884277,
+        "z": -9.623815536499023,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.045_lev1",
+        "x": 29.680675506591797,
+        "y": 0.06974387168884277,
+        "z": -9.410694122314453,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.046_lev1",
+        "x": 31.522397994995117,
+        "y": 0.06974387168884277,
+        "z": -9.410694122314453,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.047_lev1",
+        "x": 31.522397994995117,
+        "y": 0.06974387168884277,
+        "z": -9.410694122314453,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.048_lev1",
+        "x": 33.7652473449707,
+        "y": 0.06974387168884277,
+        "z": -9.410694122314453,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.049_lev1",
+        "x": 35.744415283203125,
+        "y": 0.06974387168884277,
+        "z": -8.927221298217773,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.050_lev1",
+        "x": 37.73359680175781,
+        "y": 0.06974387168884277,
+        "z": -7.6682844161987305,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.051_lev1",
+        "x": 39.025108337402344,
+        "y": 0.06974387168884277,
+        "z": -5.781117916107178,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.052_lev1",
+        "x": 39.025108337402344,
+        "y": 0.06974387168884277,
+        "z": -4.433637619018555,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.053_lev1",
+        "x": 39.025108337402344,
+        "y": 0.06974387168884277,
+        "z": -2.7802700996398926,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.054_lev1",
+        "x": 39.025108337402344,
+        "y": 0.06974387168884277,
+        "z": -0.9249986410140991,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.055_lev1",
+        "x": 39.025108337402344,
+        "y": 0.06974387168884277,
+        "z": 0.8247467279434204,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.056_lev1",
+        "x": 39.025108337402344,
+        "y": 0.06974387168884277,
+        "z": 2.8351049423217773,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.057_lev1",
+        "x": 39.025108337402344,
+        "y": 0.06974387168884277,
+        "z": 4.85700798034668,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.058_lev1",
+        "x": 40.400962829589844,
+        "y": 0.06974387168884277,
+        "z": 5.840565204620361,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.059_lev1",
+        "x": 42.54119110107422,
+        "y": 0.06974387168884277,
+        "z": 6.730347633361816,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.060_lev1",
+        "x": 44.69477081298828,
+        "y": 0.06974387168884277,
+        "z": 8.763779640197754,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.061_lev1",
+        "x": 44.69477081298828,
+        "y": 0.06974387168884277,
+        "z": 10.293373107910156,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.062_lev1",
+        "x": 44.69477081298828,
+        "y": 0.06974387168884277,
+        "z": 12.00080680847168,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.063_lev1",
+        "x": 44.066261291503906,
+        "y": 0.06974387168884277,
+        "z": 13.856514930725098,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.064_lev1",
+        "x": 42.35892105102539,
+        "y": 0.06974387168884277,
+        "z": 15.817636489868164,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.065_lev1",
+        "x": 39.841697692871094,
+        "y": 0.06974387168884277,
+        "z": 16.84474754333496,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.066_lev1",
+        "x": 38.31504440307617,
+        "y": 0.06974387168884277,
+        "z": 16.84474754333496,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.067_lev1",
+        "x": 36.9532356262207,
+        "y": 0.06974387168884277,
+        "z": 18.014772415161133,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.068_lev1",
+        "x": 36.9532356262207,
+        "y": 0.06974387168884277,
+        "z": 19.503787994384766,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.069_lev1",
+        "x": 36.9532356262207,
+        "y": 0.06974387168884277,
+        "z": 21.282581329345703,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.070_lev1",
+        "x": 36.906341552734375,
+        "y": 0.06974387168884277,
+        "z": 22.613656997680664,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.071_lev1",
+        "x": 35.776973724365234,
+        "y": 0.06974387168884277,
+        "z": 24.23796272277832,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.072_lev1",
+        "x": 34.078609466552734,
+        "y": 0.06974387168884277,
+        "z": 25.729841232299805,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.073_lev1",
+        "x": 32.2645149230957,
+        "y": 0.06974387168884277,
+        "z": 25.729841232299805,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.074_lev1",
+        "x": 30.247709274291992,
+        "y": 0.06974387168884277,
+        "z": 25.729841232299805,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.075_lev1",
+        "x": 28.11993980407715,
+        "y": 0.06974387168884277,
+        "z": 25.729841232299805,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.076_lev1",
+        "x": 25.716144561767578,
+        "y": 0.06974387168884277,
+        "z": 24.2722110748291,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.077_lev1",
+        "x": 24.36809730529785,
+        "y": 0.06974387168884277,
+        "z": 22.392559051513672,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.078_lev1",
+        "x": 23.30115509033203,
+        "y": 0.06974387168884277,
+        "z": 19.419363021850586,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.079_lev1",
+        "x": 21.393699645996094,
+        "y": 0.06974387168884277,
+        "z": 17.69051170349121,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.080_lev1",
+        "x": 18.759300231933594,
+        "y": 0.06974387168884277,
+        "z": 19.42124366760254,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.081_lev1",
+        "x": 18.759300231933594,
+        "y": 0.06974387168884277,
+        "z": 21.690797805786133,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.082_lev1",
+        "x": 17.531129837036133,
+        "y": 0.06974387168884277,
+        "z": 23.57364273071289,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.083_lev1",
+        "x": 15.210343360900879,
+        "y": 0.06974387168884277,
+        "z": 25.178428649902344,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.084_lev1",
+        "x": 13.588326454162598,
+        "y": 0.06974387168884277,
+        "z": 25.178428649902344,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.085_lev1",
+        "x": 11.561566352844238,
+        "y": 0.06974387168884277,
+        "z": 26.42384147644043,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.086_lev1",
+        "x": 10.603899955749512,
+        "y": 0.06974387168884277,
+        "z": 28.7884521484375,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.087_lev1",
+        "x": 9.92576789855957,
+        "y": 0.06974387168884277,
+        "z": 30.912734985351562,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.088_lev1",
+        "x": 8.496025085449219,
+        "y": 0.06974387168884277,
+        "z": 32.12735366821289,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.089_lev1",
+        "x": 6.789546966552734,
+        "y": 0.06974387168884277,
+        "z": 33.17233657836914,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.090_lev1",
+        "x": 5.124027252197266,
+        "y": 0.06974387168884277,
+        "z": 33.17233657836914,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.091_lev1",
+        "x": 3.405498504638672,
+        "y": 0.06974387168884277,
+        "z": 33.17233657836914,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.092_lev1",
+        "x": 1.5406360626220703,
+        "y": 0.06974387168884277,
+        "z": 33.17233657836914,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.093_lev1",
+        "x": 0.08697247505187988,
+        "y": 0.06974387168884277,
+        "z": 33.17233657836914,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.094_lev1",
+        "x": -1.5445839166641235,
+        "y": 0.06974387168884277,
+        "z": 33.17233657836914,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.095_lev1",
+        "x": -3.4936065673828125,
+        "y": 0.06974387168884277,
+        "z": 33.17233657836914,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.096_lev1",
+        "x": -5.932600975036621,
+        "y": 0.06974387168884277,
+        "z": 33.17233657836914,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.097_lev1",
+        "x": -8.340839385986328,
+        "y": 0.06974387168884277,
+        "z": 33.17233657836914,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.098_lev1",
+        "x": -10.31539249420166,
+        "y": 0.06974387168884277,
+        "z": 33.17233657836914,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.099_lev1",
+        "x": -12.875472068786621,
+        "y": 0.06974387168884277,
+        "z": 33.17233657836914,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.100_lev1",
+        "x": -15.622515678405762,
+        "y": 0.06974387168884277,
+        "z": 33.17233657836914,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.101_lev1",
+        "x": -18.26539421081543,
+        "y": 0.06974387168884277,
+        "z": 33.17233657836914,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.102_lev1",
+        "x": -21.160022735595703,
+        "y": 0.06974387168884277,
+        "z": 33.17233657836914,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.103_lev1",
+        "x": -23.666860580444336,
+        "y": 0.06974387168884277,
+        "z": 33.17233657836914,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.104_lev1",
+        "x": -25.555097579956055,
+        "y": 0.06974387168884277,
+        "z": 33.17233657836914,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.105_lev1",
+        "x": -27.132904052734375,
+        "y": 0.06974387168884277,
+        "z": 33.17233657836914,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.106_lev1",
+        "x": -28.447399139404297,
+        "y": -0.02366788685321808,
+        "z": 31.444988250732422,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.107_lev1",
+        "x": -29.655860900878906,
+        "y": -0.02366788685321808,
+        "z": 29.332231521606445,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.108_lev1",
+        "x": -29.655860900878906,
+        "y": -0.02366788685321808,
+        "z": 27.317975997924805,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.109_lev1",
+        "x": -29.655860900878906,
+        "y": -0.02366788685321808,
+        "z": 25.166234970092773,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.110_lev1",
+        "x": -29.655860900878906,
+        "y": -0.02366788685321808,
+        "z": 22.558364868164062,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.111_lev1",
+        "x": -29.655860900878906,
+        "y": -0.02366788685321808,
+        "z": 20.880168914794922,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.112_lev1",
+        "x": -29.655860900878906,
+        "y": -0.02366788685321808,
+        "z": 19.09418296813965,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.113_lev1",
+        "x": -29.655860900878906,
+        "y": -0.02366788685321808,
+        "z": 17.010160446166992,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.114_lev1",
+        "x": -29.655860900878906,
+        "y": -0.02366788685321808,
+        "z": 14.87110710144043,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.115_lev1",
+        "x": -29.655860900878906,
+        "y": -0.02366788685321808,
+        "z": 13.408044815063477,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.116_lev1",
+        "x": -31.209575653076172,
+        "y": -0.02366788685321808,
+        "z": 12.264957427978516,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.117_lev1",
+        "x": -33.583213806152344,
+        "y": -0.02366788685321808,
+        "z": 12.264957427978516,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.118_lev1",
+        "x": -35.56981658935547,
+        "y": -0.02366788685321808,
+        "z": 12.264957427978516,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.119_lev1",
+        "x": -35.56981658935547,
+        "y": -0.02366788685321808,
+        "z": 12.264957427978516,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.120_lev1",
+        "x": -37.820491790771484,
+        "y": -0.02366788685321808,
+        "z": 12.264957427978516,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.121_lev1",
+        "x": -39.933021545410156,
+        "y": -0.02366788685321808,
+        "z": 12.264957427978516,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.122_lev1",
+        "x": -39.933021545410156,
+        "y": -0.02366788685321808,
+        "z": 12.264957427978516,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.123_lev1",
+        "x": -41.444618225097656,
+        "y": -0.02366788685321808,
+        "z": 11.539212226867676,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.124_lev1",
+        "x": -42.93506622314453,
+        "y": -0.02366788685321808,
+        "z": 10.441814422607422,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.125_lev1",
+        "x": -44.4750862121582,
+        "y": -0.02366788685321808,
+        "z": 8.307280540466309,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.126_lev1",
+        "x": -44.4750862121582,
+        "y": -0.02366788685321808,
+        "z": 6.227532386779785,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.127_lev1",
+        "x": -44.4750862121582,
+        "y": -0.02366788685321808,
+        "z": 3.7875311374664307,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.128_lev1",
+        "x": -44.4750862121582,
+        "y": -0.02366788685321808,
+        "z": 1.5077292919158936,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.129_lev1",
+        "x": -44.4750862121582,
+        "y": -0.02366788685321808,
+        "z": -0.4743269681930542,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.130_lev1",
+        "x": -44.4750862121582,
+        "y": -0.02366788685321808,
+        "z": -2.4145612716674805,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.131_lev1",
+        "x": -44.4750862121582,
+        "y": -0.02366788685321808,
+        "z": -4.313889026641846,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.132_lev1",
+        "x": -44.4750862121582,
+        "y": -0.02366788685321808,
+        "z": -6.3855204582214355,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.133_lev1",
+        "x": -44.4750862121582,
+        "y": -0.02366788685321808,
+        "z": -8.244794845581055,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.134_lev1",
+        "x": -44.4750862121582,
+        "y": -0.02366788685321808,
+        "z": -9.662871360778809,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.135_lev1",
+        "x": -44.4750862121582,
+        "y": -0.02366788685321808,
+        "z": -11.873394966125488,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.136_lev1",
+        "x": -44.4750862121582,
+        "y": -0.02366788685321808,
+        "z": -13.783421516418457,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.137_lev1",
+        "x": -44.4750862121582,
+        "y": -0.02366788685321808,
+        "z": -15.545598983764648,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.138_lev1",
+        "x": -44.4750862121582,
+        "y": -0.02366788685321808,
+        "z": -17.6026668548584,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.139_lev1",
+        "x": -44.4750862121582,
+        "y": -0.02366788685321808,
+        "z": -19.335315704345703,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.140_lev1",
+        "x": -43.463436126708984,
+        "y": -0.02366788685321808,
+        "z": -21.425189971923828,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.141_lev1",
+        "x": -41.07820129394531,
+        "y": -0.02366788685321808,
+        "z": -23.27862548828125,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.142_lev1",
+        "x": -38.87489700317383,
+        "y": -0.02366788685321808,
+        "z": -23.27862548828125,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.143_lev1",
+        "x": -35.9981803894043,
+        "y": -0.02366788685321808,
+        "z": -23.27862548828125,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.144_lev1",
+        "x": -35.9981803894043,
+        "y": -0.02366788685321808,
+        "z": -23.27862548828125,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.145_lev1",
+        "x": -34.20759582519531,
+        "y": -0.02366788685321808,
+        "z": -23.27862548828125,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.146_lev1",
+        "x": -32.302101135253906,
+        "y": -0.02366788685321808,
+        "z": -23.27862548828125,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.147_lev1",
+        "x": -29.69666862487793,
+        "y": -0.02366788685321808,
+        "z": -23.27862548828125,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.148_lev1",
+        "x": -27.038806915283203,
+        "y": -0.02366788685321808,
+        "z": -23.27862548828125,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.149_lev1",
+        "x": -24.751989364624023,
+        "y": -0.02366788685321808,
+        "z": -23.27862548828125,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.150_lev1",
+        "x": -22.644851684570312,
+        "y": -0.02366788685321808,
+        "z": -23.27862548828125,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.151_lev1",
+        "x": -20.642011642456055,
+        "y": -0.02366788685321808,
+        "z": -23.27862548828125,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.152_lev1",
+        "x": -18.455608367919922,
+        "y": -0.02366788685321808,
+        "z": -23.27862548828125,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.153_lev1",
+        "x": -16.152647018432617,
+        "y": -0.02366788685321808,
+        "z": -23.27862548828125,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.154_lev1",
+        "x": -13.70425796508789,
+        "y": -0.02366788685321808,
+        "z": -23.27862548828125,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.155_lev1",
+        "x": -12.477945327758789,
+        "y": -0.02366788685321808,
+        "z": -25.619810104370117,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.156_lev1",
+        "x": -12.477945327758789,
+        "y": -0.02366788685321808,
+        "z": -28.3126277923584,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.157_lev1",
+        "x": -10.59949016571045,
+        "y": -0.02366788685321808,
+        "z": -28.3126277923584,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.158_lev1",
+        "x": -9.077366828918457,
+        "y": -0.02366788685321808,
+        "z": -29.1536922454834,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.159_lev1",
+        "x": -7.591853618621826,
+        "y": -0.02366788685321808,
+        "z": -29.203672409057617,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.160_lev1",
+        "x": -6.073616981506348,
+        "y": -0.02366788685321808,
+        "z": -28.80772590637207,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.161_lev1",
+        "x": -4.701534271240234,
+        "y": -0.02366788685321808,
+        "z": -28.05579376220703,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.162_lev1",
+        "x": -3.374802350997925,
+        "y": -0.02366788685321808,
+        "z": -27.553150177001953,
+        "level": 1,
+        "role": "default"
+    },
+    {
+        "name": "tree-high.001_lev1",
+        "x": -2.067206859588623,
+        "y": -0.02366788685321808,
+        "z": -26.848094940185547,
+        "level": 1,
+        "role": "default"
+    }
+]
