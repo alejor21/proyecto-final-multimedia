@@ -56,17 +56,28 @@ export default class World {
         onRight: v => { this.experience.keyboard.keys.right = v }
       })
 
-      if (!this.experience.physics || !this.experience.physics.world) return
+      if (!this.experience.physics?.world) return
       this.experience.renderer.instance.xr.addEventListener('sessionstart', () => this._checkVRMode())
 
       await this.loadLevel(1)
     })
   }
 
+  /* ---------- HUD ---------- */
+  _updateHUDPoints() {
+    try {
+      if (this.experience?.updateCoinCount) this.experience.updateCoinCount(this.points)
+      if (this.experience?.menu?.setStatus) this.experience.menu.setStatus(`🎖️ Puntos: ${this.points}`)
+      // Por si tu HUD escucha eventos:
+      window.dispatchEvent(new CustomEvent('game:points', { detail: { points: this.points }}))
+    } catch { /* no-op */ }
+  }
+
+  /* ---------- Límites / spawn ---------- */
   _computeLevelBounds(blocks = []) {
     const pts = []
     for (const b of blocks) {
-      if (b && b.position && Array.isArray(b.position)) {
+      if (b?.position && Array.isArray(b.position)) {
         const [x,,z] = b.position
         pts.push({ x, z })
       }
@@ -89,18 +100,18 @@ export default class World {
   }
 
   _getSpawnFromData(data) {
-    if (data && data.spawnPoint) return data.spawnPoint
-    const arr = (data && data.blocks) || []
-    const s = arr.find(x => x.role === 'spawn' || x.role === 'playerSpawn' || x.type === 'spawn')
-    if (s && s.position) {
+    if (data?.spawnPoint) return data.spawnPoint
+    const b = data?.blocks || []
+    const s = b.find(x => x.role === 'spawn' || x.role === 'playerSpawn' || x.type === 'spawn')
+    if (s?.position) {
       const [x, y, z] = s.position
-      return { x, y: (y != null ? y : 0.9), z }
+      return { x, y: y ?? 0.9, z }
     }
     if (this._lastSpawn) return this._lastSpawn
     return { x: 0, y: 0.9, z: 0 }
   }
 
-  /* ===== Monedas genéricas (2) ===== */
+  /* ---------- Monedas genéricas (2) ---------- */
   _createGenericCoin(position) {
     const group = new THREE.Group()
     const torus = new THREE.Mesh(
@@ -129,8 +140,9 @@ export default class World {
       let x = spawn.x + Math.cos(a) * r
       let z = spawn.z + Math.sin(a) * r
       const c = this._clampXZ(x, z)
-      return new THREE.Vector3(c.x, 0.2, c.z)
+      return new THREE.Vector3(c.x, 0.50, c.z) // <- antes 0.2, ahora 0.35
     }
+
     for (let i = 0; i < 2; i++) {
       let pos, tries = 0
       do { pos = mkPos(); tries++ } while (tries < 20 && used.some(p => p.distanceTo(pos) < 8))
@@ -140,17 +152,17 @@ export default class World {
     }
     this.points = 0
     this.totalDefaultCoins = 2
-    if (this.experience.updateCoinCount) this.experience.updateCoinCount(0)
+    this._updateHUDPoints()
   }
 
-  /* ===== Enemigos detrás, lentos ===== */
+  /* ---------- Enemigos ---------- */
   _clearEnemies() {
-    this.enemies.forEach(e => e && e.destroy && e.destroy())
+    this.enemies.forEach(e => e?.destroy?.())
     this.enemies = []
   }
 
   _getPlayerForward() {
-    if (!this.robot || !this.robot.group) return new THREE.Vector3(0,0,1)
+    if (!this.robot?.group) return new THREE.Vector3(0,0,1)
     const fwd = new THREE.Vector3(0,0,-1)
     fwd.applyQuaternion(this.robot.group.quaternion)
     fwd.normalize()
@@ -182,7 +194,7 @@ export default class World {
     }
   }
 
-  /* ===== Portal ===== */
+  /* ---------- Portal ---------- */
   _removePortal() {
     if (!this.portal) return
     this.scene.remove(this.portal)
@@ -196,121 +208,86 @@ export default class World {
       new THREE.MeshStandardMaterial({ color: 0x00e5ff, emissive: 0x00e5ff, emissiveIntensity: 1.2 })
     )
     ring.rotation.x = Math.PI / 2
-    const p = this.robot.body.position
-    const pos = new THREE.Vector3(p.x + 6, 1.0, p.z + 6)
-    ring.position.copy(pos)
-
+    ring.position.set(0, 0, 0)
     const light = new THREE.PointLight(0x00e5ff, 3, 16)
-    light.position.copy(pos)
+    light.position.set(0, 0, 0)
 
     this.portal = new THREE.Group()
     this.portal.add(ring, light)
-    this.portal.position.copy(pos) // importante para distanceTo
+    const bp = this.robot.body.position
+    this.portal.position.set(bp.x + 6, 1.0, bp.z + 6)
     this.portal.userData = { toLevel }
     this.scene.add(this.portal)
     if (window.userInteracted) this.portalSound.play()
   }
 
-  startRespawnCountdown() {
-    // Evitar múltiples contadores
-    if (this.respawnState) return
-    this.respawnState = { timer: 3 }
-
-    const countdownInterval = setInterval(() => {
-        if (!this.experience.ui) return
-        this.experience.ui.showStatus(`Respawn en ${this.respawnState.timer}...`)
-        this.respawnState.timer--
-
-        if (this.respawnState.timer < 0) {
-            clearInterval(countdownInterval)
-            this.experience.ui.hideStatus()
-            this.respawnPlayer()
-            this.respawnState = null
-        }
-    }, 1000)
-  }
-
-  respawnPlayer() {
-    if (this.robot && this._lastSpawn) {
-        this.robot.reset(this._lastSpawn)
-    }
-    // Revivir enemigos en nuevas posiciones para dar espacio
-    if (this._lastSpawn) {
-        this.spawnEnemiesBehind(this._lastSpawn, 3)
-    }
-  }
-
-  /* ===== Update ===== */
+  /* ---------- Update ---------- */
   update(delta) {
-    if (this.fox && this.fox.update) this.fox.update()
-    if (this.robot && this.robot.update) this.robot.update()
-    if (this.blockPrefab && this.blockPrefab.update) this.blockPrefab.update()
+    this.fox?.update?.()
+    this.robot?.update?.()
+    this.blockPrefab?.update?.()
 
-    // No actualizar enemigos si el jugador está muerto
-    if (this.robot && !this.robot.isDead) {
-        if (this.enemies.length) {
-            const dt = Math.min(0.05, delta)
-            this.enemies.forEach(e => e.update(dt))
-        }
+    if (this.enemies.length) {
+      const dt = Math.min(0.05, delta)
+      this.enemies.forEach(e => e.update(dt))
+
+      if (this.robot?.isDead && !this.defeatTriggered) {
+        this.defeatTriggered = true
+        // el modal ya se muestra desde Robot.dieImmediate()
+        return
+      }
     }
 
-    // Cámara 3ra persona
     if (this.thirdPersonCamera && this.experience.isThirdPerson && !this.experience.renderer.instance.xr.isPresenting) {
       this.thirdPersonCamera.update()
     }
 
-    if (!this.allowPrizePickup || !this.robot || !this.robot.body) return
+    if (!this.allowPrizePickup || !this.robot?.body) return
 
-    // Monedas genéricas (2): giro + recogida + portal
+    // monedas genéricas
     for (const c of this.customCoins) {
       if (c.collected) continue
       c.mesh.rotation.y += delta * 2
       const d = c.mesh.position.distanceTo(new THREE.Vector3(
-        this.robot.body.position.x,
-        this.robot.body.position.y,
-        this.robot.body.position.z
+        this.robot.body.position.x, this.robot.body.position.y, this.robot.body.position.z
       ))
       if (d < 1.6) {
         c.collected = true
         this.scene.remove(c.mesh)
-        if (window.userInteracted && this.coinSound) this.coinSound.play()
+        if (window.userInteracted) this.coinSound.play()
         this.points += 1
         this.robot.points = this.points
-        if (this.experience.updateCoinCount) this.experience.updateCoinCount(this.points)
+        this._updateHUDPoints()
         if (this.points >= this.totalDefaultCoins && !this.portal) {
           this.createPortal(this.currentLevel + 1)
         }
       }
     }
 
-    // Teleport
-    if (this.portal && this.robot && this.robot.body) {
+    // teleport
+    if (this.portal && this.robot?.body) {
       this.portal.children[0].rotation.z += delta * 2
       const d = this.portal.position.distanceTo(new THREE.Vector3(
-        this.robot.body.position.x,
-        this.robot.body.position.y,
-        this.robot.body.position.z
+        this.robot.body.position.x, this.robot.body.position.y, this.robot.body.position.z
       ))
-      if (d < 1.6) {
+      if (d < 1.8) {
         const next = this.portal.userData.toLevel
         this._removePortal()
-        if (this.levelManager && this.levelManager.nextLevel) this.levelManager.nextLevel()
+        this.levelManager?.nextLevel?.()
         this.loadLevel(next)
       }
     }
   }
 
-  /* ===== Carga de nivel ===== */
+  /* ---------- Carga de nivel ---------- */
   async loadLevel(level) {
     try {
       this.currentLevel = level
+      this.defeatTriggered = false
       this._removePortal()
       this._clearEnemies()
       this.customCoins.forEach(c => this.scene.remove(c.mesh))
       this.customCoins = []
-
-      // Limpiar estado de respawn
-      this.respawnState = null
 
       const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3001'
       const apiUrl = `${backendUrl}/api/blocks?level=${level}`
@@ -345,26 +322,22 @@ export default class World {
         await this.loader.loadFromURL(apiUrl)
       }
 
-      // Spawn calculado y clamped dentro de límites
       let spawnPoint = this._getSpawnFromData(data)
       const cl = this._clampXZ(spawnPoint.x, spawnPoint.z)
       spawnPoint = { x: cl.x, y: 0.9, z: cl.z }
       this._lastSpawn = spawnPoint
 
-      // Monedas (2) y contador
       this._spawnTwoGenericCoins(spawnPoint, 14, 26)
       this.resetRobotPosition(spawnPoint)
-
-      // 3 enemigos detrás, lentos y con colisión al jugador
-      this.spawnEnemiesBehind(spawnPoint, 3, 26, 34)
+      this.spawnEnemiesBehind(spawnPoint, 2, 26, 34)
     } catch (e) {
       console.error('❌ Error cargando nivel:', e)
     }
   }
 
-  /* ===== Limpieza / util ===== */
+  /* ---------- Limpieza / util ---------- */
   _clearEnemies() {
-    this.enemies.forEach(e => e && e.destroy && e.destroy())
+    this.enemies.forEach(e => e?.destroy?.())
     this.enemies = []
   }
 
@@ -374,36 +347,37 @@ export default class World {
     this.customCoins.forEach(c => this.scene.remove(c.mesh))
     this.customCoins = []
     const toRemove = []
-    this.scene.children.forEach(c => { if (c.userData && c.userData.levelObject) toRemove.push(c) })
+    this.scene.children.forEach(c => { if (c.userData?.levelObject) toRemove.push(c) })
     toRemove.forEach(c => {
       if (c.geometry) c.geometry.dispose()
       if (c.material) Array.isArray(c.material) ? c.material.forEach(m => m.dispose()) : c.material.dispose()
       this.scene.remove(c)
-      if (c.userData && c.userData.physicsBody) this.experience.physics.world.removeBody(c.userData.physicsBody)
+      if (c.userData?.physicsBody) this.experience.physics.world.removeBody(c.userData.physicsBody)
     })
   }
 
   resetRobotPosition(spawn) {
-    if (!this.robot || !this.robot.body || !this.robot.group || !spawn) return
+    if (!this.robot?.body || !this.robot?.group || !spawn) return
     this.robot.body.position.set(spawn.x, this.robot.bodyY, spawn.z)
     this.robot.body.velocity.set(0, 0, 0)
     this.robot.body.angularVelocity.set(0, 0, 0)
     this.robot.body.quaternion.setFromEuler(0, 0, 0)
     this.robot.group.position.set(spawn.x, this.robot.visualY, spawn.z)
     this.robot.group.rotation.set(0, 0, 0)
+    this.robot.reset(spawn) 
     this.points = 0
     this.robot.points = 0
-    if (this.experience.updateCoinCount) this.experience.updateCoinCount(0)
+    this._updateHUDPoints()
   }
 
   _checkVRMode() {
     const isVR = this.experience.renderer.instance.xr.isPresenting
     if (isVR) {
-      if (this.robot && this.robot.group) this.robot.group.visible = false
+      if (this.robot?.group) this.robot.group.visible = false
       this.experience.camera.instance.position.set(5, 1.6, 5)
       this.experience.camera.instance.lookAt(new THREE.Vector3(5, 1.6, 4))
     } else {
-      if (this.robot && this.robot.group) this.robot.group.visible = true
+      if (this.robot?.group) this.robot.group.visible = true
     }
   }
 }

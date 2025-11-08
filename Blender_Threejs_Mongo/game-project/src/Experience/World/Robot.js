@@ -22,14 +22,13 @@ export default class Robot {
       bodyRadius: 1.05,
       mass: 3.2,
       moveForce: 82,
-      maxSpeed:  6.2,   // un poco más rápido que el enemigo
+      maxSpeed:  6.2,   // un poco > enemigo
       turnSpeed: 2.0
     }
 
-    // Alturas para “pegarlo” al suelo visualmente y evitar vibración
     this.bodyY    = 0.9
     this.visualY  = 0.0
-    this._smoothLerp = 0.28  // suavizado de la posición del grupo
+    this._smoothLerp = 0.28
 
     this.setModel()
     this.setSounds()
@@ -57,12 +56,10 @@ export default class Robot {
       mass: this.params.mass,
       shape,
       position: new CANNON.Vec3(0, this.bodyY, 0),
-      linearDamping: 0.68, // reduce “hielo”
+      linearDamping: 0.68,
       angularDamping: 0.99
     })
     this.body.angularFactor.set(0, 1, 0)
-
-    // Solo colisiona con enemigos (no con el mundo)
     this.body.collisionFilterGroup = GROUP_PLAYER
     this.body.collisionFilterMask  = GROUP_ENEMY
 
@@ -110,49 +107,54 @@ export default class Robot {
   }
 
   _bindCollision() {
-    // Si el cuerpo del jugador choca con un enemigo -> eliminar
-    this._onCollide = (e) => {
-      const other = e.body
-      if (!other) return
-      // Por máscara/grupo esto solo debería disparar con ENEMY
-      if (typeof this.dieImmediate === 'function') this.dieImmediate()
-    }
+    this._onCollide = () => { this.dieImmediate() }
     this.body.addEventListener('collide', this._onCollide)
   }
 
-  die() {
-    if (this.isDead) return
-    this.isDead = true
-    this.walkSound.stop()
+  dieImmediate() {
+  if (this.isDead) return
+  this.isDead = true
+  this.walkSound.stop()
 
-    // Detener movimiento físico
-    this.body.velocity.set(0, 0, 0)
-    this.body.angularVelocity.set(0, 0, 0)
+  // Bloquear controles y abrir modal (sin respawn automático)
+  this.experience?.keyboard?.disableControls?.()
+  this.experience?.modal?.show({
+    icon: '💀',
+    message: '¡El enemigo te atrapó!',
+    buttons: [
+      {
+        text: '🔁 Reintentar',
+        onClick: () => {
+          // cerrar modal
+          this.experience.modal.hide()
+          // flujo de reinicio
+          this.experience.resetGameToFirstLevel?.()
+          this.experience.startGame?.()
+          // seguridad: vuelve a habilitar controles por si aún estaban off
+          this.experience?.keyboard?.enableControls?.()
+        }
+      },
+      {
+        text: '🏁 Terminar',
+        onClick: () => {
+          this.experience.modal.hide()
+          this.experience.resetGame?.()
+        }
+      }
+    ]
+  })
+}
 
-    // Reproducir animación de muerte si existe
-    if (this.animation.actions.die) {
-        this.play('die')
-    }
-
-    // Desactivar controles
-    this.experience.keyboard.disableControls()
-
-    // Notificar al mundo que el jugador ha muerto para que inicie el respawn
-    if (this.experience.world) {
-        this.experience.world.startRespawnCountdown()
-    }
-  }
 
   reset(position) {
     this.isDead = false
-    this.experience.keyboard.enableControls()
+    this.experience.keyboard.enableControls?.()
     this.body.position.set(position.x, this.bodyY, position.z)
     this.body.quaternion.set(0, 0, 0, 1)
     this.body.velocity.set(0, 0, 0)
     this.body.angularVelocity.set(0, 0, 0)
     this.body.angularFactor.set(0, 1, 0)
 
-    // sincroniza y resetea suavizado
     this.group.position.set(position.x, this.visualY, position.z)
     this._smoothedPos.copy(this.group.position)
 
@@ -165,15 +167,15 @@ export default class Robot {
     const delta = Math.min(0.05, this.time.delta * 0.001)
     this.animation.mixer.update(delta)
 
+    if (this.isDead) return
+
     const keys = this.keyboard.getState()
     const { moveForce, maxSpeed, turnSpeed } = this.params
 
-    // Limitar velocidad horizontal
     const clamp = (v) => Math.max(Math.min(v, maxSpeed), -maxSpeed)
     this.body.velocity.x = clamp(this.body.velocity.x)
     this.body.velocity.z = clamp(this.body.velocity.z)
 
-    // Rotación suave
     if (keys.left) {
       this.group.rotation.y += turnSpeed * delta
       this.body.quaternion.setFromEuler(0, this.group.rotation.y, 0)
@@ -183,7 +185,6 @@ export default class Robot {
       this.body.quaternion.setFromEuler(0, this.group.rotation.y, 0)
     }
 
-    // Movimiento
     let moving = false
     const forward  = new THREE.Vector3(0, 0, 1).applyQuaternion(this.group.quaternion)
     const backward = new THREE.Vector3(0, 0,-1).applyQuaternion(this.group.quaternion)
@@ -202,16 +203,13 @@ export default class Robot {
       this.body.velocity.z *= 0.8
     }
 
-    // Pegar al “suelo” (visual) y evitar vibración
     this.body.velocity.y = 0
     this.body.force.y    = 0
     this.body.position.y = this.bodyY
 
-    // Animación
     if (moving) this.play('walking')
     else this.play('idle')
 
-    // Suavizado de cámara/mesh: NO copiar directo -> lerp
     const target = new THREE.Vector3(this.body.position.x, this.visualY, this.body.position.z)
     this._smoothedPos.lerp(target, this._smoothLerp)
     this.group.position.copy(this._smoothedPos)

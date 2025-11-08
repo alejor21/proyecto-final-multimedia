@@ -14,19 +14,18 @@ export default class Enemy {
     this.playerRef    = playerRef
     this.resources    = this.experience.resources
 
-    // Enemigo más lento que el jugador
     this.baseSpeed = 0.55
     this.runSpeed  = 0.95
     this.speed     = this.baseSpeed
 
-    // “Pegado” al piso
     this.bodyY   = 0.9
     this.visualY = 0.0
 
     this.maxChaseDistance = 30
     this.activationRadius  = 4
-    this.killRadius        = 1.0
+    this.killRadius        = 1.8
     this.delayActivation   = 0
+    this._killSent         = false
 
     this.proximitySound = new Sound('/sounds/alert.ogg', { loop: true, volume: 0 })
     this.proximitySound.play()
@@ -66,7 +65,6 @@ export default class Enemy {
       linearDamping: 0.55,
       angularDamping: 0.98
     })
-    // Solo colisiona con el jugador
     this.body.collisionFilterGroup = GROUP_ENEMY
     this.body.collisionFilterMask  = GROUP_PLAYER
 
@@ -112,13 +110,18 @@ export default class Enemy {
     this.current = next
   }
 
+  _sendKillOnce() {
+    if (this._killSent) return
+    this._killSent = true
+    if (this.playerRef && typeof this.playerRef.dieImmediate === 'function') {
+      this.playerRef.dieImmediate()
+    }
+  }
+
   _bindCollision() {
-    // Matar por contacto físico con el jugador
     this._onCollide = (e) => {
       if (!this.playerRef || !this.playerRef.body) return
-      if (e.body === this.playerRef.body) {
-        if (typeof this.playerRef.dieImmediate === 'function') this.playerRef.dieImmediate()
-      }
+      if (e.body === this.playerRef.body) this._sendKillOnce()
     }
     this.body.addEventListener('collide', this._onCollide)
   }
@@ -139,9 +142,8 @@ export default class Enemy {
     const dz = pz - ez
     const dist = Math.hypot(dx, dz)
 
-    // Fallback: por proximidad (por si el motor no emite el contacto en algún frame)
     if (dist <= this.killRadius) {
-      if (typeof this.playerRef.dieImmediate === 'function') this.playerRef.dieImmediate()
+      this._sendKillOnce()
       return
     }
 
@@ -159,7 +161,7 @@ export default class Enemy {
 
       const maxD = 10
       const proximity = 1 - Math.min(dist, maxD) / maxD
-      if (this.proximitySound && this.proximitySound.setVolume) this.proximitySound.setVolume(proximity * 0.6)
+      if (this.proximitySound?.setVolume) this.proximitySound.setVolume(proximity * 0.6)
 
       this.model.lookAt(new THREE.Vector3(px, this.visualY, pz))
     } else {
@@ -167,8 +169,7 @@ export default class Enemy {
       this.body.velocity.z *= 0.9
     }
 
-    // “Pegado” al piso
-    this.body.force.y = 0
+    this.body.force.y    = 0
     this.body.position.y = this.bodyY
     this.model.position.set(this.body.position.x, this.visualY, this.body.position.z)
   }
@@ -178,7 +179,7 @@ export default class Enemy {
     if (this.proximitySound) this.proximitySound.stop()
     if (this.body) {
       if (this._onCollide) this.body.removeEventListener('collide', this._onCollide)
-      if (this.physicsWorld && this.physicsWorld.bodies.includes(this.body)) this.physicsWorld.removeBody(this.body)
+      if (this.physicsWorld.bodies.includes(this.body)) this.physicsWorld.removeBody(this.body)
       this.body = null
     }
     if (this.mixer) { this.mixer.stopAllAction(); this.mixer = null }
