@@ -67,4 +67,18 @@ export default class Floor {
 
         this.physics.world.addBody(this.body)
     }
+
+    destroy() {
+        // Remove mesh from scene
+        if (this.mesh) {
+            this.scene.remove(this.mesh)
+            this.mesh.geometry.dispose()
+            this.mesh.material.dispose()
+        }
+
+        // Remove body from physics world
+        if (this.body) {
+            this.physics.world.removeBody(this.body)
+        }
+    }
 }

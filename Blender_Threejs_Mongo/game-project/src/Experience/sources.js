@@ -4305,5 +4305,1005 @@ export default [
         "name": "_100avatars_169_coolcone_lev2",
         "type": "gltfModel",
         "path": "/models/toycar/_100avatars_169_coolcone_lev2.glb"
+    },
+    {
+        "name": "apartment_mesh_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/apartment_mesh_lev3.glb"
+    },
+    {
+        "name": "barrel_lev1_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/barrel_lev1_lev3.glb"
+    },
+    {
+        "name": "building3_big_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/building3_big_lev3.glb"
+    },
+    {
+        "name": "building4_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/building4_lev3.glb"
+    },
+    {
+        "name": "bulldozer_mesh_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/bulldozer_mesh_lev3.glb"
+    },
+    {
+        "name": "cone_cube_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/cone_cube_lev3.glb"
+    },
+    {
+        "name": "cone_cube.001_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/cone_cube.001_lev3.glb"
+    },
+    {
+        "name": "cone_cube.002_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/cone_cube.002_lev3.glb"
+    },
+    {
+        "name": "cone_cube.003_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/cone_cube.003_lev3.glb"
+    },
+    {
+        "name": "cone_cube.004_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/cone_cube.004_lev3.glb"
+    },
+    {
+        "name": "cone_cube.005_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/cone_cube.005_lev3.glb"
+    },
+    {
+        "name": "cone_cube.006_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/cone_cube.006_lev3.glb"
+    },
+    {
+        "name": "cone_cube.007_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/cone_cube.007_lev3.glb"
+    },
+    {
+        "name": "cone_cube.008_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/cone_cube.008_lev3.glb"
+    },
+    {
+        "name": "cone_cube.009_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/cone_cube.009_lev3.glb"
+    },
+    {
+        "name": "cone_cube.010_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/cone_cube.010_lev3.glb"
+    },
+    {
+        "name": "cone_cube.011_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/cone_cube.011_lev3.glb"
+    },
+    {
+        "name": "cone_cube.012_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/cone_cube.012_lev3.glb"
+    },
+    {
+        "name": "farmhouse_mesh_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/farmhouse_mesh_lev3.glb"
+    },
+    {
+        "name": "group1049382511_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1049382511_lev3.glb"
+    },
+    {
+        "name": "group1053393204_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1053393204_lev3.glb"
+    },
+    {
+        "name": "group1053393204.001_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1053393204.001_lev3.glb"
+    },
+    {
+        "name": "group1053393204.002_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1053393204.002_lev3.glb"
+    },
+    {
+        "name": "group1053393204.003_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1053393204.003_lev3.glb"
+    },
+    {
+        "name": "group1087146255_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1087146255_lev3.glb"
+    },
+    {
+        "name": "group1097450248_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1097450248_lev3.glb"
+    },
+    {
+        "name": "group1137840711_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1137840711_lev3.glb"
+    },
+    {
+        "name": "group1235162053_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1235162053_lev3.glb"
+    },
+    {
+        "name": "group1255249708_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1255249708_lev3.glb"
+    },
+    {
+        "name": "group1255249708.001_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1255249708.001_lev3.glb"
+    },
+    {
+        "name": "group1255249708.002_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1255249708.002_lev3.glb"
+    },
+    {
+        "name": "group1255249708.003_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1255249708.003_lev3.glb"
+    },
+    {
+        "name": "group1266234480_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1266234480_lev3.glb"
+    },
+    {
+        "name": "group1266234480.001_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1266234480.001_lev3.glb"
+    },
+    {
+        "name": "group1266234480.002_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1266234480.002_lev3.glb"
+    },
+    {
+        "name": "group1266234480.003_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1266234480.003_lev3.glb"
+    },
+    {
+        "name": "group1266234480.004_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1266234480.004_lev3.glb"
+    },
+    {
+        "name": "group1266234480.005_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1266234480.005_lev3.glb"
+    },
+    {
+        "name": "group1266234480.006_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1266234480.006_lev3.glb"
+    },
+    {
+        "name": "group1266234480.007_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1266234480.007_lev3.glb"
+    },
+    {
+        "name": "group1266234480.008_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1266234480.008_lev3.glb"
+    },
+    {
+        "name": "group1266234480.009_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1266234480.009_lev3.glb"
+    },
+    {
+        "name": "group1266234480.010_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1266234480.010_lev3.glb"
+    },
+    {
+        "name": "group1266234480.011_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1266234480.011_lev3.glb"
+    },
+    {
+        "name": "group1266234480.012_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1266234480.012_lev3.glb"
+    },
+    {
+        "name": "group1266234480.013_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1266234480.013_lev3.glb"
+    },
+    {
+        "name": "group1266234480.014_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1266234480.014_lev3.glb"
+    },
+    {
+        "name": "group1266234480.015_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1266234480.015_lev3.glb"
+    },
+    {
+        "name": "group1266234480.016_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1266234480.016_lev3.glb"
+    },
+    {
+        "name": "group1266234480.017_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1266234480.017_lev3.glb"
+    },
+    {
+        "name": "group1266234480.018_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1266234480.018_lev3.glb"
+    },
+    {
+        "name": "group1266234480.019_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1266234480.019_lev3.glb"
+    },
+    {
+        "name": "group1266234480.020_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1266234480.020_lev3.glb"
+    },
+    {
+        "name": "group1266234480.021_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1266234480.021_lev3.glb"
+    },
+    {
+        "name": "group1266234480.022_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1266234480.022_lev3.glb"
+    },
+    {
+        "name": "group1266234480.023_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1266234480.023_lev3.glb"
+    },
+    {
+        "name": "group1266234480.024_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1266234480.024_lev3.glb"
+    },
+    {
+        "name": "group1266234480.025_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1266234480.025_lev3.glb"
+    },
+    {
+        "name": "group1266234480.026_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1266234480.026_lev3.glb"
+    },
+    {
+        "name": "group1266234480.027_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1266234480.027_lev3.glb"
+    },
+    {
+        "name": "group1266234480.028_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1266234480.028_lev3.glb"
+    },
+    {
+        "name": "group1266234480.029_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1266234480.029_lev3.glb"
+    },
+    {
+        "name": "group1266234480.030_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1266234480.030_lev3.glb"
+    },
+    {
+        "name": "group1266234480.031_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1266234480.031_lev3.glb"
+    },
+    {
+        "name": "group1266234480.032_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1266234480.032_lev3.glb"
+    },
+    {
+        "name": "group1266234480.033_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1266234480.033_lev3.glb"
+    },
+    {
+        "name": "group1266234480.034_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1266234480.034_lev3.glb"
+    },
+    {
+        "name": "group1266234480.035_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1266234480.035_lev3.glb"
+    },
+    {
+        "name": "group1266234480.036_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1266234480.036_lev3.glb"
+    },
+    {
+        "name": "group1266234480.037_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1266234480.037_lev3.glb"
+    },
+    {
+        "name": "group1266234480.038_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1266234480.038_lev3.glb"
+    },
+    {
+        "name": "group1266234480.039_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1266234480.039_lev3.glb"
+    },
+    {
+        "name": "group1266234480.040_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1266234480.040_lev3.glb"
+    },
+    {
+        "name": "group1266234480.041_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1266234480.041_lev3.glb"
+    },
+    {
+        "name": "group1266234480.042_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1266234480.042_lev3.glb"
+    },
+    {
+        "name": "group1266234480.043_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1266234480.043_lev3.glb"
+    },
+    {
+        "name": "group1267716008_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1267716008_lev3.glb"
+    },
+    {
+        "name": "group1271622721_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1271622721_lev3.glb"
+    },
+    {
+        "name": "group1309263615_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1309263615_lev3.glb"
+    },
+    {
+        "name": "group1312543285_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1312543285_lev3.glb"
+    },
+    {
+        "name": "group1328705514_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1328705514_lev3.glb"
+    },
+    {
+        "name": "group1361332441_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1361332441_lev3.glb"
+    },
+    {
+        "name": "group1396617582_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1396617582_lev3.glb"
+    },
+    {
+        "name": "group1406506203_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1406506203_lev3.glb"
+    },
+    {
+        "name": "group1406506203.001_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1406506203.001_lev3.glb"
+    },
+    {
+        "name": "group1406506203.002_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1406506203.002_lev3.glb"
+    },
+    {
+        "name": "group1406506203.003_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1406506203.003_lev3.glb"
+    },
+    {
+        "name": "group1428909106_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1428909106_lev3.glb"
+    },
+    {
+        "name": "group1432673303_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1432673303_lev3.glb"
+    },
+    {
+        "name": "group1434121163_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1434121163_lev3.glb"
+    },
+    {
+        "name": "group1437559802_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1437559802_lev3.glb"
+    },
+    {
+        "name": "group1437559802.001_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1437559802.001_lev3.glb"
+    },
+    {
+        "name": "group1437559802.002_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1437559802.002_lev3.glb"
+    },
+    {
+        "name": "group1437559802.003_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1437559802.003_lev3.glb"
+    },
+    {
+        "name": "group1437559802.004_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1437559802.004_lev3.glb"
+    },
+    {
+        "name": "group1437559802.005_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1437559802.005_lev3.glb"
+    },
+    {
+        "name": "group1437559802.006_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1437559802.006_lev3.glb"
+    },
+    {
+        "name": "group1437559802.007_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1437559802.007_lev3.glb"
+    },
+    {
+        "name": "group1437559802.008_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1437559802.008_lev3.glb"
+    },
+    {
+        "name": "group1437559802.009_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1437559802.009_lev3.glb"
+    },
+    {
+        "name": "group1437559802.010_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1437559802.010_lev3.glb"
+    },
+    {
+        "name": "group1437559802.011_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1437559802.011_lev3.glb"
+    },
+    {
+        "name": "group1437559802.012_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1437559802.012_lev3.glb"
+    },
+    {
+        "name": "group1437559802.013_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1437559802.013_lev3.glb"
+    },
+    {
+        "name": "group1437559802.014_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1437559802.014_lev3.glb"
+    },
+    {
+        "name": "group1437559802.015_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1437559802.015_lev3.glb"
+    },
+    {
+        "name": "group1437559802.016_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1437559802.016_lev3.glb"
+    },
+    {
+        "name": "group1437559802.017_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1437559802.017_lev3.glb"
+    },
+    {
+        "name": "group1437559802.018_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1437559802.018_lev3.glb"
+    },
+    {
+        "name": "group1437559802.019_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1437559802.019_lev3.glb"
+    },
+    {
+        "name": "group1437559802.020_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1437559802.020_lev3.glb"
+    },
+    {
+        "name": "group1437559802.021_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1437559802.021_lev3.glb"
+    },
+    {
+        "name": "group1437559802.022_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1437559802.022_lev3.glb"
+    },
+    {
+        "name": "group1437559802.023_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1437559802.023_lev3.glb"
+    },
+    {
+        "name": "group1437559802.024_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1437559802.024_lev3.glb"
+    },
+    {
+        "name": "group1437559802.025_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1437559802.025_lev3.glb"
+    },
+    {
+        "name": "group1437559802.026_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1437559802.026_lev3.glb"
+    },
+    {
+        "name": "group1437559802.027_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1437559802.027_lev3.glb"
+    },
+    {
+        "name": "group1437559802.028_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1437559802.028_lev3.glb"
+    },
+    {
+        "name": "group1437559802.029_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1437559802.029_lev3.glb"
+    },
+    {
+        "name": "group1437559802.030_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1437559802.030_lev3.glb"
+    },
+    {
+        "name": "group1437559802.031_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1437559802.031_lev3.glb"
+    },
+    {
+        "name": "group1437559802.032_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1437559802.032_lev3.glb"
+    },
+    {
+        "name": "group1437559802.033_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1437559802.033_lev3.glb"
+    },
+    {
+        "name": "group1437559802.034_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1437559802.034_lev3.glb"
+    },
+    {
+        "name": "group1437559802.035_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1437559802.035_lev3.glb"
+    },
+    {
+        "name": "group1437559802.036_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1437559802.036_lev3.glb"
+    },
+    {
+        "name": "group1437559802.037_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1437559802.037_lev3.glb"
+    },
+    {
+        "name": "group1437559802.038_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1437559802.038_lev3.glb"
+    },
+    {
+        "name": "group1437559802.039_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1437559802.039_lev3.glb"
+    },
+    {
+        "name": "group1437559802.040_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1437559802.040_lev3.glb"
+    },
+    {
+        "name": "group1437559802.041_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1437559802.041_lev3.glb"
+    },
+    {
+        "name": "group1437559802.042_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1437559802.042_lev3.glb"
+    },
+    {
+        "name": "group1437559802.043_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1437559802.043_lev3.glb"
+    },
+    {
+        "name": "group1437559802.044_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1437559802.044_lev3.glb"
+    },
+    {
+        "name": "group1462176807_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1462176807_lev3.glb"
+    },
+    {
+        "name": "group1517981274_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274_lev3.glb"
+    },
+    {
+        "name": "group1517981274.001_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.001_lev3.glb"
+    },
+    {
+        "name": "group1517981274.002_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.002_lev3.glb"
+    },
+    {
+        "name": "group1517981274.003_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.003_lev3.glb"
+    },
+    {
+        "name": "group1517981274.004_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.004_lev3.glb"
+    },
+    {
+        "name": "group1517981274.005_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.005_lev3.glb"
+    },
+    {
+        "name": "group1517981274.006_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.006_lev3.glb"
+    },
+    {
+        "name": "group1517981274.007_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.007_lev3.glb"
+    },
+    {
+        "name": "group1517981274.008_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.008_lev3.glb"
+    },
+    {
+        "name": "group1517981274.009_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.009_lev3.glb"
+    },
+    {
+        "name": "group1517981274.010_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.010_lev3.glb"
+    },
+    {
+        "name": "group1517981274.011_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.011_lev3.glb"
+    },
+    {
+        "name": "group1517981274.012_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.012_lev3.glb"
+    },
+    {
+        "name": "group1517981274.013_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.013_lev3.glb"
+    },
+    {
+        "name": "group1517981274.014_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.014_lev3.glb"
+    },
+    {
+        "name": "group1517981274.015_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.015_lev3.glb"
+    },
+    {
+        "name": "group1517981274.016_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.016_lev3.glb"
+    },
+    {
+        "name": "group1517981274.017_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.017_lev3.glb"
+    },
+    {
+        "name": "group1517981274.018_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.018_lev3.glb"
+    },
+    {
+        "name": "group1517981274.019_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.019_lev3.glb"
+    },
+    {
+        "name": "group1517981274.020_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.020_lev3.glb"
+    },
+    {
+        "name": "group1517981274.021_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.021_lev3.glb"
+    },
+    {
+        "name": "group1517981274.022_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.022_lev3.glb"
+    },
+    {
+        "name": "group1517981274.023_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.023_lev3.glb"
+    },
+    {
+        "name": "group1517981274.024_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.024_lev3.glb"
+    },
+    {
+        "name": "group1517981274.025_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.025_lev3.glb"
+    },
+    {
+        "name": "group1517981274.026_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.026_lev3.glb"
+    },
+    {
+        "name": "group1517981274.027_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.027_lev3.glb"
+    },
+    {
+        "name": "group1517981274.028_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.028_lev3.glb"
+    },
+    {
+        "name": "group1517981274.029_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.029_lev3.glb"
+    },
+    {
+        "name": "group1517981274.030_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.030_lev3.glb"
+    },
+    {
+        "name": "group1517981274.031_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.031_lev3.glb"
+    },
+    {
+        "name": "group1517981274.032_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.032_lev3.glb"
+    },
+    {
+        "name": "group1517981274.033_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.033_lev3.glb"
+    },
+    {
+        "name": "group1517981274.034_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.034_lev3.glb"
+    },
+    {
+        "name": "group1517981274.035_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.035_lev3.glb"
+    },
+    {
+        "name": "group1517981274.036_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.036_lev3.glb"
+    },
+    {
+        "name": "group1517981274.037_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.037_lev3.glb"
+    },
+    {
+        "name": "group1517981274.038_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.038_lev3.glb"
+    },
+    {
+        "name": "group1517981274.039_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.039_lev3.glb"
+    },
+    {
+        "name": "group1517981274.040_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.040_lev3.glb"
+    },
+    {
+        "name": "group1517981274.041_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.041_lev3.glb"
+    },
+    {
+        "name": "group1517981274.042_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.042_lev3.glb"
+    },
+    {
+        "name": "group1517981274.043_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.043_lev3.glb"
+    },
+    {
+        "name": "group1517981274.044_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.044_lev3.glb"
+    },
+    {
+        "name": "group1517981274.045_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.045_lev3.glb"
+    },
+    {
+        "name": "group1517981274.046_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.046_lev3.glb"
+    },
+    {
+        "name": "group1517981274.047_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.047_lev3.glb"
+    },
+    {
+        "name": "group1517981274.048_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.048_lev3.glb"
+    },
+    {
+        "name": "group1517981274.049_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.049_lev3.glb"
+    },
+    {
+        "name": "group1517981274.050_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.050_lev3.glb"
+    },
+    {
+        "name": "group1517981274.051_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.051_lev3.glb"
+    },
+    {
+        "name": "group1517981274.052_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.052_lev3.glb"
+    },
+    {
+        "name": "group1517981274.053_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.053_lev3.glb"
+    },
+    {
+        "name": "group1517981274.054_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1517981274.054_lev3.glb"
+    },
+    {
+        "name": "group1521415191_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1521415191_lev3.glb"
+    },
+    {
+        "name": "group1522812509_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1522812509_lev3.glb"
+    },
+    {
+        "name": "group1537001526_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1537001526_lev3.glb"
+    },
+    {
+        "name": "group1559752038_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1559752038_lev3.glb"
+    },
+    {
+        "name": "group1588873527_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1588873527_lev3.glb"
+    },
+    {
+        "name": "group1592824771_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1592824771_lev3.glb"
+    },
+    {
+        "name": "group1592824771.001_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1592824771.001_lev3.glb"
+    },
+    {
+        "name": "group1592824771.002_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1592824771.002_lev3.glb"
+    },
+    {
+        "name": "group1592824771.003_lev3",
+        "type": "gltfModel",
+        "path": "/models/toycar/group1592824771.003_lev3.glb"
     }
 ];

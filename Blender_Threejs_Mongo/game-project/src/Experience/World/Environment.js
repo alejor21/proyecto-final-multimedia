@@ -87,4 +87,20 @@ export default class Environment {
                 .onChange(this.environmentMap.updateMaterials)
         }
     }
+
+    destroy() {
+        // Remove sun light
+        if (this.sunLight) {
+            this.scene.remove(this.sunLight)
+            this.sunLight.dispose()
+        }
+
+        // Remove environment map
+        this.scene.environment = null
+
+        // Remove debug folder
+        if (this.debug.active && this.debugFolder) {
+            this.debug.ui.removeFolder(this.debugFolder)
+        }
+    }
 }

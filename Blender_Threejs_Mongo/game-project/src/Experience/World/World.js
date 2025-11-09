@@ -38,8 +38,6 @@ export default class World {
     this.customCoins = []
 
     this.resources.on('ready', async () => {
-      this.floor = new Floor(this.experience)
-      this.environment = new Environment(this.experience)
       this.loader = new ToyCarLoader(this.experience)
       await this.loader.loadFromAPI()
 
@@ -281,7 +279,21 @@ export default class World {
 
   /* ---------- Carga de nivel ---------- */
   async loadLevel(level) {
+    console.log(`Cargando nivel ${level}...`);
     try {
+      this.clearCurrentScene() // Limpiar la escena antes de cargar el nuevo nivel
+
+      // Destruir y recrear el suelo y el entorno
+      if (this.floor) {
+          this.floor.destroy();
+      }
+      this.floor = new Floor(this.experience);
+
+      if (this.environment) {
+          this.environment.destroy();
+      }
+      this.environment = new Environment(this.experience);
+
       this.currentLevel = level
       this.defeatTriggered = false
       this._removePortal()
@@ -298,6 +310,10 @@ export default class World {
         const ct = res.headers.get('content-type') || ''
         if (!ct.includes('application/json')) throw new Error('No JSON')
         data = await res.json()
+        if (!data.blocks || data.blocks.length === 0) {
+            console.log('API returned no blocks, trying local fallback...');
+            throw new Error('API empty');
+        }
       } catch {
         const base = (import.meta.env.BASE_URL || '/').replace(/\/$/, '')
         const localUrl = `${base}/data/toy_car_blocks.json`
@@ -306,7 +322,7 @@ export default class World {
         const ct = localRes.headers.get('content-type') || ''
         if (!ct.includes('application/json')) throw new Error('Local No JSON')
         const all = await localRes.json()
-        const filtered = all.filter(b => b.level === level)
+        const filtered = all.filter(b => b.level == level || (Array.isArray(b.level) && b.level.includes(level)))
         data = { blocks: filtered }
       }
 
