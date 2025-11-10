@@ -53,16 +53,10 @@ fs.readdir(modelsDir, (err, files) => {
 
     const glbFiles = files.filter(file => path.extname(file).toLowerCase() === '.glb');
 
-    const modelSources = glbFiles.map(file => {
-        const name = path.basename(file, '.glb');
-        return {
-            name: name,
-            type: 'gltfModel',
-            path: `/models/toycar/${file}`
-        };
-    });
-
-    const allSources = [...baseSources, ...modelSources];
+    // We intentionally DO NOT preload all GLB files here.
+    // Preloading thousands of models makes the app hang on startup.
+    // Models will be lazy-loaded per level by ToyCarLoader.
+    const allSources = [...baseSources];
 
     const sourcesContent = `export default ${JSON.stringify(allSources, null, 4)};`;
 
@@ -71,6 +65,6 @@ fs.readdir(modelsDir, (err, files) => {
             console.error('Error writing sources.js file:', err);
             return;
         }
-        console.log('sources.js file has been generated successfully.');
+        console.log('sources.js file has been generated with base sources only.');
     });
 });

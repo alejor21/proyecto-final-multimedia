@@ -39,7 +39,6 @@ export default class World {
 
     this.resources.on('ready', async () => {
       this.loader = new ToyCarLoader(this.experience)
-      await this.loader.loadFromAPI()
 
       this.fox = new Fox(this.experience)
       this.robot = new Robot(this.experience)
@@ -128,7 +127,7 @@ export default class World {
     return group
   }
 
-  _spawnTwoGenericCoins(spawn, minR = 14, maxR = 26) {
+  _spawnGenericCoins(count, spawn, minR = 14, maxR = 26) {
     this.customCoins.forEach(c => { this.scene.remove(c.mesh) })
     this.customCoins = []
     const used = []
@@ -138,18 +137,18 @@ export default class World {
       let x = spawn.x + Math.cos(a) * r
       let z = spawn.z + Math.sin(a) * r
       const c = this._clampXZ(x, z)
-      return new THREE.Vector3(c.x, 0.50, c.z) // <- antes 0.2, ahora 0.35
+      return new THREE.Vector3(c.x, 0.50, c.z)
     }
 
-    for (let i = 0; i < 2; i++) {
+    for (let i = 0; i < count; i++) {
       let pos, tries = 0
-      do { pos = mkPos(); tries++ } while (tries < 20 && used.some(p => p.distanceTo(pos) < 8))
+      do { pos = mkPos(); tries++ } while (tries < 30 && used.some(p => p.distanceTo(pos) < 8))
       used.push(pos)
       const coinMesh = this._createGenericCoin(pos)
       this.customCoins.push({ mesh: coinMesh, collected: false })
     }
     this.points = 0
-    this.totalDefaultCoins = 2
+    this.totalDefaultCoins = count
     this._updateHUDPoints()
   }
 
@@ -303,28 +302,35 @@ export default class World {
 
       const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3001'
       const apiUrl = `${backendUrl}/api/blocks?level=${level}`
-      let data
+      let apiBlocks = []
+      // 1) Intentar API (puede venir incompleta)
       try {
         const res = await fetch(apiUrl)
         if (!res.ok) throw new Error('API')
         const ct = res.headers.get('content-type') || ''
         if (!ct.includes('application/json')) throw new Error('No JSON')
-        data = await res.json()
-        if (!data.blocks || data.blocks.length === 0) {
-            console.log('API returned no blocks, trying local fallback...');
-            throw new Error('API empty');
-        }
-      } catch {
-        const base = (import.meta.env.BASE_URL || '/').replace(/\/$/, '')
-        const localUrl = `${base}/data/toy_car_blocks.json`
-        const localRes = await fetch(localUrl)
-        if (!localRes.ok) throw new Error('Local')
-        const ct = localRes.headers.get('content-type') || ''
-        if (!ct.includes('application/json')) throw new Error('Local No JSON')
-        const all = await localRes.json()
-        const filtered = all.filter(b => b.level == level || (Array.isArray(b.level) && b.level.includes(level)))
-        data = { blocks: filtered }
-      }
+        const payload = await res.json()
+        apiBlocks = Array.isArray(payload?.blocks) ? payload.blocks : (Array.isArray(payload) ? payload : [])
+      } catch { /* no-op: seguimos con local */ }
+
+      // 2) Local siempre: usamos para rellenar faltantes
+      const base = (import.meta.env.BASE_URL || '/').replace(/\/$/, '')
+      const localUrl = `${base}/data/toy_car_blocks.json`
+      const localRes = await fetch(localUrl)
+      if (!localRes.ok) throw new Error('Local')
+      const ct = localRes.headers.get('content-type') || ''
+      if (!ct.includes('application/json')) throw new Error('Local No JSON')
+      const all = await localRes.json()
+      const localBlocks = all.filter(b => b.level == level || (Array.isArray(b.level) && b.level.includes(level)))
+
+      // 3) Merge: API (si hay) sobre LOCAL, y LOCAL agrega lo que falte
+      const byName = new Map()
+      for (const b of apiBlocks) if (b?.name) byName.set(b.name, b)
+      for (const b of localBlocks) if (b?.name && !byName.has(b.name)) byName.set(b.name, b)
+      const merged = Array.from(byName.values())
+      if (!merged.length) throw new Error('No blocks for level')
+      const data = { blocks: merged }
+      console.log(`Level ${level}: API ${apiBlocks.length} + Local ${localBlocks.length} -> Merged ${merged.length}`)
 
       this._computeLevelBounds(data.blocks)
 
@@ -333,7 +339,10 @@ export default class World {
         const preciseUrl = `${base}/config/precisePhysicsModels.json`
         const preciseRes = await fetch(preciseUrl)
         const preciseModels = await preciseRes.json()
-        this.loader._processBlocks(data.blocks, preciseModels)
+        await this.loader._processBlocks(data.blocks, preciseModels, level)
+
+        // Pre-cargar bloques de siguientes niveles en background (para transición instantánea)
+        this._preloadUpcomingLevels(level).catch(() => {})
       } else {
         await this.loader.loadFromURL(apiUrl)
       }
@@ -343,12 +352,37 @@ export default class World {
       spawnPoint = { x: cl.x, y: 0.9, z: cl.z }
       this._lastSpawn = spawnPoint
 
-      this._spawnTwoGenericCoins(spawnPoint, 14, 26)
+      // Per-level coins/enemies
+      let coinCount = 2, enemyCount = 2
+      if (level === 2) { coinCount = 5; enemyCount = 4 }
+      else if (level === 3) { coinCount = 10; enemyCount = 8 }
+
+      this._spawnGenericCoins(coinCount, spawnPoint, 14, 26)
       this.resetRobotPosition(spawnPoint)
-      this.spawnEnemiesBehind(spawnPoint, 2, 26, 34)
+      this.spawnEnemiesBehind(spawnPoint, enemyCount, 26, 34)
     } catch (e) {
       console.error('❌ Error cargando nivel:', e)
     }
+  }
+
+  // Pre-carga de modelos de los siguientes niveles (sin instanciarlos)
+  async _preloadUpcomingLevels(current) {
+    const nextLevels = [current + 1, current + 2].filter(l => l <= 3) // hasta nivel 3
+    if (!nextLevels.length) return
+
+    try {
+      const base = (import.meta.env.BASE_URL || '/').replace(/\/$/, '')
+      const localUrl = `${base}/data/toy_car_blocks.json`
+      const res = await fetch(localUrl)
+      if (!res.ok) return
+      const all = await res.json()
+
+      const byLevelNames = nextLevels.flatMap(l =>
+        all.filter(b => b.level == l || (Array.isArray(b.level) && b.level.includes(l))).map(b => b.name)
+      )
+      await this.loader._preloadModels(byLevelNames, 10)
+      console.log(`Pre-cargados modelos de niveles ${nextLevels.join(', ')}`)
+    } catch { /* no-op */ }
   }
 
   /* ---------- Limpieza / util ---------- */

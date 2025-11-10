@@ -22,8 +22,9 @@ export default class Fox {
 
     setModel() {
         this.model = this.resource.scene
-        this.model.scale.set(0.02, 0.02, 0.02)
-        this.model.position.set(3, 0, 0)
+        // Smaller fox
+        this.model.scale.set(0.012, 0.012, 0.012)
+        this.model.position.set(1.5, 0, -1.2)
         this.scene.add(this.model)
         //Activando la sobra de fox
         this.model.traverse((child) => {
@@ -75,6 +76,37 @@ export default class Fox {
     }
 
     update() {
-        this.animation.mixer.update(this.time.delta * 0.001)
+        const dt = Math.min(0.05, this.time.delta * 0.001)
+        this.animation.mixer.update(dt)
+
+        // Follow the player (robot)
+        const robot = this.experience?.world?.robot
+        if (!robot?.group) return
+
+        // Desired position: a bit behind the robot
+        const forward = new THREE.Vector3(0, 0, -1).applyQuaternion(robot.group.quaternion).normalize()
+        const desired = new THREE.Vector3().copy(robot.group.position)
+        const followDist = 1.6
+        desired.addScaledVector(forward, -followDist)
+        desired.y = 0
+
+        // Smoothly move fox towards desired position
+        const curr = this.model.position
+        const toTarget = new THREE.Vector3().subVectors(desired, curr)
+        const dist = toTarget.length()
+        const speed = 4.0 // m/s
+        const step = Math.min(dist, speed * dt)
+        if (dist > 0.001) {
+            toTarget.normalize().multiplyScalar(step)
+            curr.add(toTarget)
+        }
+
+        // Face the movement direction or towards the robot when still
+        const lookAt = (dist > 0.1) ? new THREE.Vector3().addVectors(curr, toTarget) : robot.group.position
+        this.model.lookAt(lookAt.x, curr.y, lookAt.z)
+
+        // Choose animation based on speed
+        if (dist > 0.2) this.animation.play('walking')
+        else this.animation.play('idle')
     }
 }

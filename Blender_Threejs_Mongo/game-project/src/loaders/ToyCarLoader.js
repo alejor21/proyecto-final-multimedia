@@ -12,6 +12,38 @@ export default class ToyCarLoader {
         this.prizes = [];
     }
 
+    // Carga perezosa de modelos GLB por nombre y cachea en resources
+    _getModelGLB(name) {
+        const cached = this.resources.items[name];
+        if (cached) return Promise.resolve(cached);
+        const loader = this.resources.loaders.gltfLoader;
+        const url = `/models/toycar/${name}.glb`;
+        return new Promise((resolve, reject) => {
+            loader.load(url, (gltf) => {
+                this.resources.items[name] = gltf;
+                resolve(gltf);
+            }, undefined, (err) => {
+                console.warn(`No se pudo cargar GLB: ${name} desde ${url}`);
+                reject(err);
+            });
+        });
+    }
+
+    // Pre-carga en paralelo con límite de concurrencia
+    async _preloadModels(names, concurrency = 8) {
+        const unique = Array.from(new Set(names.filter(Boolean)));
+        if (!unique.length) return;
+
+        const queue = unique.slice();
+        const workers = new Array(Math.min(concurrency, queue.length)).fill(0).map(async () => {
+            while (queue.length) {
+                const next = queue.shift();
+                try { await this._getModelGLB(next) } catch { /* no-op */ }
+            }
+        });
+        await Promise.all(workers);
+    }
+
     _applyTextureToMeshes(root, imagePath, matcher, options = {}) {
         // Pre-chequeo: buscar meshes objetivo antes de cargar la textura
         const matchedMeshes = [];
@@ -128,7 +160,7 @@ export default class ToyCarLoader {
 
             }
 
-            this._processBlocks(blocks, precisePhysicsModels);
+            await this._processBlocks(blocks, precisePhysicsModels);
         } catch (err) {
             console.error('Error al cargar bloques o lista Trimesh:', err);
         }
@@ -145,30 +177,53 @@ export default class ToyCarLoader {
             const blocks = await res.json();
             console.log(`📦 Bloques cargados (${blocks.length}) desde ${apiUrl}`);
 
-            this._processBlocks(blocks, precisePhysicsModels);
+            await this._processBlocks(blocks, precisePhysicsModels);
         } catch (err) {
             console.error('Error al cargar bloques desde URL:', err);
         }
     }
 
-    _processBlocks(blocks, precisePhysicsModels) {
-        blocks.forEach(block => {
+    async _processBlocks(blocks, precisePhysicsModels, levelCtx = null) {
+        // 1) Pre-cargar todos los modelos del nivel en paralelo
+        const names = blocks.map(b => b.name);
+        await this._preloadModels(names, 10);
+
+        // 2) Instanciar y crear físicas
+        for (const block of blocks) {
             if (!block.name) {
                 console.warn('Bloque sin nombre:', block);
-                return;
+                continue;
             }
 
             const resourceKey = block.name;
-            const glb = this.resources.items[resourceKey];
-
+            let glb = this.resources.items[resourceKey];
             if (!glb) {
-                console.warn(`Modelo no encontrado: ${resourceKey}`);
-                return;
+                try {
+                    glb = await this._getModelGLB(resourceKey);
+                } catch (e) {
+                    console.warn(`Modelo no encontrado o error cargando: ${resourceKey}`);
+                    continue;
+                }
             }
 
             const model = glb.scene.clone();
-
-            //  MARCAR modelo como perteneciente al nivel
+            // Reset root transform; container will carry world placement
+            if (!block.name.startsWith('coin')) {
+                // Level-aware anchoring: L2 keeps original XZ pivot; others center XZ.
+                const bbox = new THREE.Box3().setFromObject(model)
+                const center = new THREE.Vector3(); bbox.getCenter(center)
+                const min = bbox.min.clone()
+                const lvl = (levelCtx != null) ? levelCtx : (Array.isArray(block.level) ? Number(block.level[0]) : Number(block.level))
+                if (lvl === 2) {
+                    // Keep X/Z as authored; only drop to ground
+                    model.position.y -= min.y
+                } else {
+                    // Default: center XZ, drop to ground
+                    model.position.sub(new THREE.Vector3(center.x, min.y, center.z))
+                }
+            }
+            model.updateMatrixWorld(true);
+            // Mark model as a level object
             model.userData.levelObject = true;
 
             // Eliminar cámaras y luces embebidas
@@ -178,7 +233,13 @@ export default class ToyCarLoader {
                 }
             });
 
-            //  Manejo de carteles: aplicar textura a meshes
+            // Position model using block data (supports x/y/z or position [x,y,z])
+            const hasArrayPos = Array.isArray(block.position) && block.position.length >= 3;
+            const px = hasArrayPos ? Number(block.position[0]) : Number(block.x);
+            const py = hasArrayPos ? Number(block.position[1]) : Number(block.y);
+            const pz = hasArrayPos ? Number(block.position[2]) : Number(block.z);
+            
+            //  Apply sign texture to matching meshes
             this._applyTextureToMeshes(
                 model,
                 '/textures/ima1.jpg',
@@ -216,7 +277,11 @@ export default class ToyCarLoader {
                 // ✅ NO resetear posición/rotación - Prize.js lo maneja correctamente
                 const prize = new Prize({
                     model,
-                    position: new THREE.Vector3(block.x, block.y, block.z),
+                    position: new THREE.Vector3(
+                        Number.isFinite(px) ? px : Number(block.x || 0),
+                        Number.isFinite(py) ? py : Number(block.y || 1),
+                        Number.isFinite(pz) ? pz : Number(block.z || 0)
+                    ),
                     scene: this.scene,
                     role: block.role || "default"
                 });
@@ -226,25 +291,35 @@ export default class ToyCarLoader {
                 prize.pivot.userData.levelObject = true;
 
                 this.prizes.push(prize);
-                return;
+                continue;
             }
 
-            this.scene.add(model);
+            // Add model via container positioned at exact block coordinates
+            const container = new THREE.Group();
+            container.userData.levelObject = true;
+            container.position.set(
+                Number.isFinite(px) ? px : 0,
+                Number.isFinite(py) ? py : 0,
+                Number.isFinite(pz) ? pz : 0
+            );
+            container.add(model);
+            this.scene.add(container);
+            container.updateMatrixWorld(true);
 
             // Físicas
             let shape;
             let position = new THREE.Vector3();
 
             if (precisePhysicsModels.includes(block.name)) {
-                shape = createTrimeshShapeFromModel(model);
+                shape = createTrimeshShapeFromModel(container);
                 if (!shape) {
                     console.warn(`No se pudo crear Trimesh para ${block.name}`);
-                    return;
+                    continue;
                 }
                 position.set(0, 0, 0);
             } else {
-                shape = createBoxShapeFromModel(model, 0.9);
-                const bbox = new THREE.Box3().setFromObject(model);
+                shape = createBoxShapeFromModel(container, 0.9);
+                const bbox = new THREE.Box3().setFromObject(container);
                 const center = new THREE.Vector3();
                 const size = new THREE.Vector3();
                 bbox.getCenter(center);
@@ -262,10 +337,13 @@ export default class ToyCarLoader {
 
             // 🔵 MARCAR cuerpo físico
             body.userData = { levelObject: true };
-            model.userData.physicsBody = body;
-            body.userData.linkedModel = model;
+            container.userData.physicsBody = body;
+            body.userData.linkedModel = container;
             this.physics.world.addBody(body);
-        });
+        }
     }
 
 }
+
+
+
