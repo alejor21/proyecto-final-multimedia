@@ -204,6 +204,7 @@ export default class World {
       new THREE.TorusGeometry(2.4, 0.35, 18, 72),
       new THREE.MeshStandardMaterial({ color: 0x00e5ff, emissive: 0x00e5ff, emissiveIntensity: 1.2 })
     )
+    ring.name = 'ringPortal'
     ring.rotation.x = Math.PI / 2
     ring.position.set(0, 0, 0)
     const light = new THREE.PointLight(0x00e5ff, 3, 16)
@@ -212,10 +213,27 @@ export default class World {
     this.portal = new THREE.Group()
     this.portal.add(ring, light)
     const bp = this.robot.body.position
-    this.portal.position.set(bp.x + 6, 1.0, bp.z + 6)
+    const desired = new THREE.Vector3(bp.x + 6, 1.0, bp.z + 6)
+    const placed = this._findClearPortalSpot(desired)
+    this.portal.position.copy(placed)
     this.portal.userData = { toLevel }
     this.scene.add(this.portal)
     if (window.userInteracted) this.portalSound.play()
+
+    // Load GLB portal model
+    try {
+      const loader = this.experience?.resources?.loaders?.gltfLoader
+      if (loader) {
+        loader.load('/models/portal/portal.glb', (gltf) => {
+          const mdl = gltf.scene
+          mdl.name = 'glbPortal'
+          mdl.position.set(0, 0, 0)
+          mdl.traverse((c) => { if (c.isMesh) { c.castShadow = true; c.receiveShadow = true } })
+          mdl.scale.set(0.9, 0.9, 0.9)
+          this.portal.add(mdl)
+        }, undefined, (e) => { console.warn('No se pudo cargar portal.glb', e) })
+      }
+    } catch { /* no-op */ }
   }
 
   /* ---------- Update ---------- */
@@ -263,7 +281,8 @@ export default class World {
 
     // teleport
     if (this.portal && this.robot?.body) {
-      this.portal.children[0].rotation.z += delta * 2
+      const ring = this.portal.getObjectByName('ringPortal')
+      if (ring) ring.rotation.z += delta * 2
       const d = this.portal.position.distanceTo(new THREE.Vector3(
         this.robot.body.position.x, this.robot.body.position.y, this.robot.body.position.z
       ))
@@ -274,6 +293,40 @@ export default class World {
         this.loadLevel(next)
       }
     }
+  }
+
+  // Find a free spot near desired position within level bounds
+  _findClearPortalSpot(desired) {
+    const candidates = []
+    const base = new THREE.Vector3(desired.x, 1.0, desired.z)
+    const offsets = [
+      [6, 6], [-6, 6], [6, -6], [-6, -6],
+      [8, 0], [-8, 0], [0, 8], [0, -8],
+      [10, 10], [-10, 10], [10, -10], [-10, -10]
+    ]
+    for (const [ox, oz] of offsets) {
+      let x = base.x + ox
+      let z = base.z + oz
+      const c = this._clampXZ(x, z)
+      candidates.push(new THREE.Vector3(c.x, 1.0, c.z))
+    }
+
+    const minDist = 3.5
+    const isClear = (p) => {
+      for (const obj of this.scene.children) {
+        if (!obj?.userData?.levelObject) continue
+        const pos = new THREE.Vector3()
+        obj.getWorldPosition(pos)
+        if (pos.distanceTo(p) < minDist) return false
+      }
+      return true
+    }
+
+    for (const c of candidates) {
+      if (isClear(c)) return c
+    }
+    const cl = this._clampXZ(base.x, base.z)
+    return new THREE.Vector3(cl.x, 1.0, cl.z)
   }
 
   /* ---------- Carga de nivel ---------- */
