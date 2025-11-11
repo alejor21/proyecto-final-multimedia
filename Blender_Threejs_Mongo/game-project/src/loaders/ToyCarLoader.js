@@ -1,7 +1,11 @@
-import * as CANNON from 'cannon-es';
+﻿import * as CANNON from 'cannon-es';
 import * as THREE from 'three';
 import { createBoxShapeFromModel, createTrimeshShapeFromModel } from '../Experience/Utils/PhysicsShapeFactory.js';
 import Prize from '../Experience/World/Prize.js';
+
+// Collision groups (mantener consistentes con Robot/Enemy)
+const GROUP_PLAYER = 1 << 0;
+const GROUP_ENEMY  = 1 << 1;
 
 export default class ToyCarLoader {
     constructor(experience) {
@@ -44,6 +48,32 @@ export default class ToyCarLoader {
         await Promise.all(workers);
     }
 
+    // ✅ SOLO PARA NIVEL 1: Determina si el objeto necesita centrado en XZ
+    _needsCenterAlignment(name, level) {
+        // SOLO aplicar en nivel 1
+        if (level !== 1) return false;
+        
+        const n = String(name || '').toLowerCase();
+        return n.startsWith('track-') || 
+               n.includes('road') || 
+               n.includes('street') ||
+               n.startsWith('plasticbarrier');
+    }
+
+    // ✅ SOLO PARA NIVEL 1: Determina si el objeto necesita alinearse con el suelo
+    _needsGroundAlignment(name, level) {
+        // SOLO aplicar en nivel 1
+        if (level !== 1) return false;
+        
+        const n = String(name || '').toLowerCase();
+        return n.includes('wheel') || 
+               n.includes('tire') ||
+               n.startsWith('frontwheel') ||
+               n.startsWith('backwheels') ||
+               n.includes('car') ||
+               n.includes('vehicle');
+    }
+
     _applyTextureToMeshes(root, imagePath, matcher, options = {}) {
         // Pre-chequeo: buscar meshes objetivo antes de cargar la textura
         const matchedMeshes = [];
@@ -54,8 +84,6 @@ export default class ToyCarLoader {
         });
 
         if (matchedMeshes.length === 0) {
-            // Evitar ruido en consola si no hay objetivos en este modelo
-            // console.debug(`Sin meshes objetivo para ${imagePath} en este modelo.`)
             return;
         }
 
@@ -120,9 +148,7 @@ export default class ToyCarLoader {
                     applied++;
                 });
 
-                if (applied === 0) {
-                    // console.debug(`Sin meshes para aplicar textura: ${imagePath}`);
-                } else {
+                if (applied > 0) {
                     console.log(`🖼️ Textura aplicada (${imagePath}) a ${applied} mesh(es)`);
                 }
             },
@@ -147,22 +173,20 @@ export default class ToyCarLoader {
                 if (!res.ok) throw new Error('Conexión fallida');
 
                 blocks = await res.json();
-                console.log('Datos cargados desde la API:', blocks.length);
-                //console.log('🧩 Lista de bloques:', blocks.map(b => b.name))
+                console.log('✅ Datos cargados desde la API:', blocks.length);
             } catch (apiError) {
-                console.warn('No se pudo conectar con la API. Cargando desde archivo local...');
+                console.warn('⚠️ No se pudo conectar con la API. Cargando desde archivo local...');
                 const localRes = await fetch('/data/toy_car_blocks.json');
                 const allBlocks = await localRes.json();
 
                 // 🔍 Filtrar solo nivel 1
                 blocks = allBlocks.filter(b => b.level === 1);
-                console.log(`Datos cargados desde archivo local (nivel 1): ${blocks.length}`);
-
+                console.log(`✅ Datos cargados desde archivo local (nivel 1): ${blocks.length}`);
             }
 
             await this._processBlocks(blocks, precisePhysicsModels);
         } catch (err) {
-            console.error('Error al cargar bloques o lista Trimesh:', err);
+            console.error('❌ Error al cargar bloques o lista Trimesh:', err);
         }
     }
 
@@ -179,21 +203,43 @@ export default class ToyCarLoader {
 
             await this._processBlocks(blocks, precisePhysicsModels);
         } catch (err) {
-            console.error('Error al cargar bloques desde URL:', err);
+            console.error('❌ Error al cargar bloques desde URL:', err);
         }
     }
 
     async _processBlocks(blocks, precisePhysicsModels, levelCtx = null) {
+        // Cargar escalas por nivel (una vez)
+        if (!this._levelScales) {
+            try {
+                const base = (import.meta.env.BASE_URL || '/').replace(/\/$/, '');
+                const scaleUrl = `${base}/config/levelScales.json`;
+                const res = await fetch(scaleUrl);
+                this._levelScales = res.ok ? await res.json() : {};
+            } catch { 
+                this._levelScales = {}; 
+            }
+        }
+
         // 1) Pre-cargar todos los modelos del nivel en paralelo
         const names = blocks.map(b => b.name);
         await this._preloadModels(names, 10);
 
+        console.log(`🔄 Procesando ${blocks.length} bloques...`);
+        let success = 0;
+        let skipped = 0;
+
         // 2) Instanciar y crear físicas
         for (const block of blocks) {
             if (!block.name) {
-                console.warn('Bloque sin nombre:', block);
+                console.warn('⚠️ Bloque sin nombre:', block);
+                skipped++;
                 continue;
             }
+
+            // Determinar nivel del bloque
+            const lvl = (levelCtx != null) 
+                ? levelCtx 
+                : (Array.isArray(block.level) ? Number(block.level[0]) : Number(block.level));
 
             const resourceKey = block.name;
             let glb = this.resources.items[resourceKey];
@@ -201,29 +247,13 @@ export default class ToyCarLoader {
                 try {
                     glb = await this._getModelGLB(resourceKey);
                 } catch (e) {
-                    console.warn(`Modelo no encontrado o error cargando: ${resourceKey}`);
+                    console.warn(`❌ Modelo no encontrado: ${resourceKey}`);
+                    skipped++;
                     continue;
                 }
             }
 
             const model = glb.scene.clone();
-            // Reset root transform; container will carry world placement
-            if (!block.name.startsWith('coin')) {
-                // Level-aware anchoring: L2 keeps original XZ pivot; others center XZ.
-                const bbox = new THREE.Box3().setFromObject(model)
-                const center = new THREE.Vector3(); bbox.getCenter(center)
-                const min = bbox.min.clone()
-                const lvl = (levelCtx != null) ? levelCtx : (Array.isArray(block.level) ? Number(block.level[0]) : Number(block.level))
-                if (lvl === 2) {
-                    // Keep X/Z as authored; only drop to ground
-                    model.position.y -= min.y
-                } else {
-                    // Default: center XZ, drop to ground
-                    model.position.sub(new THREE.Vector3(center.x, min.y, center.z))
-                }
-            }
-            model.updateMatrixWorld(true);
-            // Mark model as a level object
             model.userData.levelObject = true;
 
             // Eliminar cámaras y luces embebidas
@@ -233,117 +263,283 @@ export default class ToyCarLoader {
                 }
             });
 
-            // Position model using block data (supports x/y/z or position [x,y,z])
+            // Obtener posición del bloque
             const hasArrayPos = Array.isArray(block.position) && block.position.length >= 3;
-            const px = hasArrayPos ? Number(block.position[0]) : Number(block.x);
-            const py = hasArrayPos ? Number(block.position[1]) : Number(block.y);
-            const pz = hasArrayPos ? Number(block.position[2]) : Number(block.z);
-            
-            //  Apply sign texture to matching meshes
-            this._applyTextureToMeshes(
-                model,
-                '/textures/ima1.jpg',
-                (child) => child.name === 'Cylinder001' || (child.name && child.name.toLowerCase().includes('cylinder')),
-                { rotation: -Math.PI / 2, center: { x: 0.5, y: 0.5 }, mirrorX: true }
-            );
+            const px = hasArrayPos ? Number(block.position[0]) : Number(block.x || 0);
+            const py = hasArrayPos ? Number(block.position[1]) : Number(block.y || 0);
+            const pz = hasArrayPos ? Number(block.position[2]) : Number(block.z || 0);
 
-            //  Integración especial para modelos baked
-            if (block.name.includes('baked')) {
-                const bakedTexture = new THREE.TextureLoader().load('/textures/baked.jpg');
-                bakedTexture.flipY = false;
-                if ('colorSpace' in bakedTexture) {
-                    bakedTexture.colorSpace = THREE.SRGBColorSpace;
-                } else {
-                    bakedTexture.encoding = THREE.sRGBEncoding;
-                }
-
-                model.traverse(child => {
-                    if (child.isMesh) {
-                        child.material = new THREE.MeshBasicMaterial({ map: bakedTexture });
-                        child.material.needsUpdate = true;
-
-                        if (child.name.toLowerCase().includes('portal')) {
-                            this.experience.time.on('tick', () => {
-                                child.rotation.y += 0.01;
-                            });
-                        }
-                    }
-                });
-            }
-
-            //  Si es un premio (coin)
-            if (block.name.startsWith('coin')) {
-                // console.log('🧪 Revisando coin desde API:', block)
-                // ✅ NO resetear posición/rotación - Prize.js lo maneja correctamente
-                const prize = new Prize({
-                    model,
-                    position: new THREE.Vector3(
-                        Number.isFinite(px) ? px : Number(block.x || 0),
-                        Number.isFinite(py) ? py : Number(block.y || 1),
-                        Number.isFinite(pz) ? pz : Number(block.z || 0)
-                    ),
-                    scene: this.scene,
-                    role: block.role || "default"
-                });
-
-                // 🔵 MARCAR modelo del premio
-                prize.model.userData.levelObject = true;
-                prize.pivot.userData.levelObject = true;
-
-                this.prizes.push(prize);
-                continue;
-            }
-
-            // Add model via container positioned at exact block coordinates
-            const container = new THREE.Group();
-            container.userData.levelObject = true;
-            container.position.set(
-                Number.isFinite(px) ? px : 0,
-                Number.isFinite(py) ? py : 0,
-                Number.isFinite(pz) ? pz : 0
-            );
-            container.add(model);
-            this.scene.add(container);
-            container.updateMatrixWorld(true);
-
-            // Físicas
-            let shape;
-            let position = new THREE.Vector3();
-
-            if (precisePhysicsModels.includes(block.name)) {
-                shape = createTrimeshShapeFromModel(container);
-                if (!shape) {
-                    console.warn(`No se pudo crear Trimesh para ${block.name}`);
-                    continue;
-                }
-                position.set(0, 0, 0);
-            } else {
-                shape = createBoxShapeFromModel(container, 0.9);
-                const bbox = new THREE.Box3().setFromObject(container);
+            // ✅ LÓGICA SEPARADA POR NIVEL
+            if (lvl === 1) {
+                // ========== NIVEL 1: LÓGICA ORIGINAL INTACTA ==========
+                const bbox = new THREE.Box3().setFromObject(model);
                 const center = new THREE.Vector3();
                 const size = new THREE.Vector3();
                 bbox.getCenter(center);
                 bbox.getSize(size);
-                center.y -= size.y / 2;
-                position.copy(center);
+
+                const needsCentering = this._needsCenterAlignment(block.name, lvl);
+                const needsGroundAlign = this._needsGroundAlignment(block.name, lvl);
+
+                if (needsCentering) {
+                    model.position.set(-center.x, model.position.y, -center.z);
+                }
+
+                if (needsGroundAlign) {
+                    model.position.y -= bbox.min.y;
+                }
+
+                model.updateMatrixWorld(true);
+
+                // Aplicar texturas
+                this._applyTextureToMeshes(
+                    model,
+                    '/textures/ima1.jpg',
+                    (child) => child.name === 'Cylinder001' || 
+                              (child.name && child.name.toLowerCase().includes('cylinder')),
+                    { rotation: -Math.PI / 2, center: { x: 0.5, y: 0.5 }, mirrorX: true }
+                );
+
+                // Modelos baked
+                if (block.name.includes('baked')) {
+                    const bakedTexture = new THREE.TextureLoader().load('/textures/baked.jpg');
+                    bakedTexture.flipY = false;
+                    if ('colorSpace' in bakedTexture) {
+                        bakedTexture.colorSpace = THREE.SRGBColorSpace;
+                    } else {
+                        bakedTexture.encoding = THREE.sRGBEncoding;
+                    }
+
+                    model.traverse(child => {
+                        if (child.isMesh) {
+                            child.material = new THREE.MeshBasicMaterial({ map: bakedTexture });
+                            child.material.needsUpdate = true;
+
+                            if (child.name.toLowerCase().includes('portal')) {
+                                this.experience.time.on('tick', () => {
+                                    child.rotation.y += 0.01;
+                                });
+                            }
+                        }
+                    });
+                }
+
+                // Premios
+                const role = (block.role || '').toLowerCase();
+                const looksLikeCoin = block.name.toLowerCase().startsWith('coin');
+                const isCollectible = role === 'collectible' || role === 'prize' || role === 'coin';
+                
+                if (isCollectible) {
+                    const prize = new Prize({
+                        model,
+                        position: new THREE.Vector3(px, py + 0.25, pz),
+                        scene: this.scene,
+                        role: block.role || "collectible"
+                    });
+
+                    prize.model.userData.levelObject = true;
+                    prize.pivot.userData.levelObject = true;
+                    this.prizes.push(prize);
+                    success++;
+                    continue;
+                } else if (looksLikeCoin) {
+                    console.log(`Omitiendo moneda decorativa: ${block.name}`);
+                    skipped++;
+                    continue;
+                }
+
+                // Lógica de contenedor/escala nivel 1
+                const lvlKey = String(lvl);
+                const scale = (this._levelScales && (this._levelScales[lvlKey] ?? this._levelScales[lvl])) || 1;
+                const needsTileAlign = this._needsCenterAlignment(block.name, lvl);
+
+                if (needsTileAlign) {
+                    const container = new THREE.Group();
+                    container.userData.levelObject = true;
+                    container.position.set(px, py, pz);
+                    if (typeof scale === 'number' && isFinite(scale) && scale !== 1) {
+                        container.scale.setScalar(scale);
+                    }
+
+                    const bboxM = new THREE.Box3().setFromObject(model);
+                    const centerM = new THREE.Vector3(); 
+                    bboxM.getCenter(centerM);
+                    const minM = bboxM.min.clone();
+                    model.position.sub(new THREE.Vector3(centerM.x, minM.y, centerM.z));
+                    container.add(model);
+                    this.scene.add(container);
+                    container.updateMatrixWorld(true);
+
+                    // Físicas desde contenedor
+                    let shapeC; 
+                    let physicsPositionC = new THREE.Vector3();
+                    if (precisePhysicsModels.includes(block.name)) {
+                        shapeC = createTrimeshShapeFromModel(container);
+                        if (!shapeC) { 
+                            console.warn(`⚠️ No se pudo crear Trimesh para ${block.name}`); 
+                            skipped++;
+                            continue; 
+                        }
+                        physicsPositionC.set(0, 0, 0);
+                    } else {
+                        shapeC = createBoxShapeFromModel(container, 0.9);
+                        const bboxC = new THREE.Box3().setFromObject(container);
+                        bboxC.getCenter(physicsPositionC);
+                    }
+                    const bodyC = new CANNON.Body({
+                        mass: 0,
+                        shape: shapeC,
+                        position: new CANNON.Vec3(physicsPositionC.x, physicsPositionC.y, physicsPositionC.z),
+                        material: this.physics.obstacleMaterial
+                    });
+                    bodyC.userData = { levelObject: true };
+                    container.userData.physicsBody = bodyC;
+                    bodyC.userData.linkedModel = container;
+                    bodyC.collisionFilterGroup = bodyC.collisionFilterGroup || 1;
+                    bodyC.collisionFilterMask = (typeof bodyC.collisionFilterMask === 'number' ? bodyC.collisionFilterMask : 0xFFFFFFFF) & ~GROUP_ENEMY;
+                    this.physics.world.addBody(bodyC);
+                    success++;
+                    continue;
+                } else {
+                    if (typeof scale === 'number' && isFinite(scale) && scale !== 1) {
+                        model.scale.setScalar(scale);
+                    }
+                }
+
+                model.position.set(px, py, pz);
+                this.scene.add(model);
+                model.updateMatrixWorld(true);
+
+                // Físicas nivel 1
+                let shape;
+                let physicsPosition = new THREE.Vector3();
+
+                if (precisePhysicsModels.includes(block.name)) {
+                    shape = createTrimeshShapeFromModel(model);
+                    if (!shape) {
+                        console.warn(`⚠️ No se pudo crear Trimesh para ${block.name}`);
+                        skipped++;
+                        continue;
+                    }
+                    physicsPosition.copy(model.position);
+                } else {
+                    shape = createBoxShapeFromModel(model, 0.9);
+                    const physBbox = new THREE.Box3().setFromObject(model);
+                    physBbox.getCenter(physicsPosition);
+                }
+
+                const body = new CANNON.Body({
+                    mass: 0,
+                    shape: shape,
+                    position: new CANNON.Vec3(physicsPosition.x, physicsPosition.y, physicsPosition.z),
+                    material: this.physics.obstacleMaterial
+                });
+
+                body.userData = { levelObject: true };
+                model.userData.physicsBody = body;
+                body.userData.linkedModel = model;
+                body.collisionFilterGroup = body.collisionFilterGroup || 1;
+                body.collisionFilterMask = (typeof body.collisionFilterMask === 'number' 
+                    ? body.collisionFilterMask 
+                    : 0xFFFFFFFF) & ~GROUP_ENEMY;
+                
+                this.physics.world.addBody(body);
+                success++;
+
+            } else if (lvl === 2) {
+                // ========== NIVEL 2: CARGA DIRECTA SIN MODIFICACIONES ==========
+                
+                model.position.set(px, py, pz);
+                this.scene.add(model);
+                model.updateMatrixWorld(true);
+
+                // Físicas simples
+                let shape;
+                let physicsPosition = new THREE.Vector3();
+
+                if (precisePhysicsModels.includes(block.name)) {
+                    shape = createTrimeshShapeFromModel(model);
+                    if (!shape) {
+                        console.warn(`⚠️ No se pudo crear Trimesh para ${block.name}`);
+                        skipped++;
+                        continue;
+                    }
+                    physicsPosition.set(px, py, pz);
+                } else {
+                    shape = createBoxShapeFromModel(model, 0.95);
+                    const physBbox = new THREE.Box3().setFromObject(model);
+                    physBbox.getCenter(physicsPosition);
+                }
+
+                const body = new CANNON.Body({
+                    mass: 0,
+                    shape: shape,
+                    position: new CANNON.Vec3(physicsPosition.x, physicsPosition.y, physicsPosition.z),
+                    material: this.physics.obstacleMaterial
+                });
+
+                body.userData = { levelObject: true };
+                model.userData.physicsBody = body;
+                body.userData.linkedModel = model;
+                body.collisionFilterGroup = 1;
+                body.collisionFilterMask = 0xFFFFFFFF & ~GROUP_ENEMY;
+                
+                this.physics.world.addBody(body);
+                success++;
+
+            } else if (lvl === 3) {
+                // ========== NIVEL 3: COMPACTACIÓN PARA ACERCAR ELEMENTOS ==========
+                
+                // ✅ Factor de compactación: ajusta este valor según necesites
+                const LEVEL_3_SCALE = 0.5; // 0.5 = 50%, 0.4 = 40%, 0.6 = 60%
+                
+                // Aplicar escala a las posiciones
+                const finalPx = px * LEVEL_3_SCALE;
+                const finalPy = py * LEVEL_3_SCALE;
+                const finalPz = pz * LEVEL_3_SCALE;
+                
+                // Escalar el modelo también
+                model.scale.setScalar(LEVEL_3_SCALE);
+                model.position.set(finalPx, finalPy, finalPz);
+                this.scene.add(model);
+                model.updateMatrixWorld(true);
+
+                // Físicas escaladas
+                let shape;
+                let physicsPosition = new THREE.Vector3();
+
+                if (precisePhysicsModels.includes(block.name)) {
+                    shape = createTrimeshShapeFromModel(model);
+                    if (!shape) {
+                        console.warn(`⚠️ No se pudo crear Trimesh para ${block.name}`);
+                        skipped++;
+                        continue;
+                    }
+                    physicsPosition.set(finalPx, finalPy, finalPz);
+                } else {
+                    shape = createBoxShapeFromModel(model, 0.95);
+                    const physBbox = new THREE.Box3().setFromObject(model);
+                    physBbox.getCenter(physicsPosition);
+                }
+
+                const body = new CANNON.Body({
+                    mass: 0,
+                    shape: shape,
+                    position: new CANNON.Vec3(physicsPosition.x, physicsPosition.y, physicsPosition.z),
+                    material: this.physics.obstacleMaterial
+                });
+
+                body.userData = { levelObject: true };
+                model.userData.physicsBody = body;
+                body.userData.linkedModel = model;
+                body.collisionFilterGroup = 1;
+                body.collisionFilterMask = 0xFFFFFFFF & ~GROUP_ENEMY;
+                
+                this.physics.world.addBody(body);
+                success++;
             }
-
-            const body = new CANNON.Body({
-                mass: 0,
-                shape: shape,
-                position: new CANNON.Vec3(position.x, position.y, position.z),
-                material: this.physics.obstacleMaterial
-            });
-
-            // 🔵 MARCAR cuerpo físico
-            body.userData = { levelObject: true };
-            container.userData.physicsBody = body;
-            body.userData.linkedModel = container;
-            this.physics.world.addBody(body);
         }
+
+        console.log(`✅ Carga completa: ${success} cargados, ${skipped} omitidos`);
     }
-
 }
-
-
-

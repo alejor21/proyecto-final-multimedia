@@ -72,13 +72,31 @@ export default class World {
 
   /* ---------- Límites / spawn ---------- */
   _computeLevelBounds(blocks = []) {
-    const pts = []
+    const all = []
+    const anchors = []
+    const isAnchor = (name) => {
+      const n = String(name || '').toLowerCase()
+      return (
+        n.startsWith('track-') || n.includes('track-road') || n.includes('track-wide') || n.includes('track-striped') ||
+        n.startsWith('street') || n.startsWith('plasticbarrier') || n.startsWith('streetlights') ||
+        n.startsWith('trafficcone') || n.startsWith('prop_woodenfence') ||
+        n.startsWith('railroad-') || n.startsWith('spline-track') || n.startsWith('spline-segment') || n.startsWith('barrier_large')
+      )
+    }
     for (const b of blocks) {
+      let x, z
       if (b?.position && Array.isArray(b.position)) {
-        const [x,,z] = b.position
-        pts.push({ x, z })
+        x = Number(b.position[0]); z = Number(b.position[2])
+      } else if (typeof b?.x === 'number' && typeof b?.z === 'number') {
+        x = Number(b.x); z = Number(b.z)
+      }
+      if (Number.isFinite(x) && Number.isFinite(z)) {
+        const p = { x, z }
+        all.push(p)
+        if (isAnchor(b?.name)) anchors.push(p)
       }
     }
+    const pts = anchors.length >= 4 ? anchors : all
     if (!pts.length) return
     const pad = 6
     const minX = Math.min(...pts.map(p => p.x)) - pad
@@ -99,10 +117,35 @@ export default class World {
   _getSpawnFromData(data) {
     if (data?.spawnPoint) return data.spawnPoint
     const b = data?.blocks || []
+    // 1) explicit spawn
     const s = b.find(x => x.role === 'spawn' || x.role === 'playerSpawn' || x.type === 'spawn')
     if (s?.position) {
       const [x, y, z] = s.position
       return { x, y: y ?? 0.9, z }
+    }
+    if (typeof s?.x === 'number' && typeof s?.z === 'number') {
+      return { x: s.x, y: Number.isFinite(s.y) ? s.y : 0.9, z: s.z }
+    }
+    // 2) centroid of anchors
+    const anchors = []
+    const isAnchor = (name) => {
+      const n = String(name || '').toLowerCase()
+      return (
+        n.startsWith('track-') || n.includes('track-road') || n.includes('track-wide') || n.includes('track-striped') ||
+        n.startsWith('street') || n.startsWith('plasticbarrier') || n.startsWith('railroad-') ||
+        n.startsWith('spline-track') || n.startsWith('spline-segment')
+      )
+    }
+    for (const it of b) {
+      if (!isAnchor(it?.name)) continue
+      const x = Number(it?.position?.[0] ?? it?.x)
+      const z = Number(it?.position?.[2] ?? it?.z)
+      if (Number.isFinite(x) && Number.isFinite(z)) anchors.push({ x, z })
+    }
+    if (anchors.length) {
+      const cx = anchors.reduce((a,p)=>a+p.x,0)/anchors.length
+      const cz = anchors.reduce((a,p)=>a+p.z,0)/anchors.length
+      return { x: cx, y: 0.9, z: cz }
     }
     if (this._lastSpawn) return this._lastSpawn
     return { x: 0, y: 0.9, z: 0 }
@@ -137,7 +180,7 @@ export default class World {
       let x = spawn.x + Math.cos(a) * r
       let z = spawn.z + Math.sin(a) * r
       const c = this._clampXZ(x, z)
-      return new THREE.Vector3(c.x, 0.50, c.z)
+      return new THREE.Vector3(c.x, 0.80, c.z)
     }
 
     for (let i = 0; i < count; i++) {
@@ -376,12 +419,28 @@ export default class World {
       const all = await localRes.json()
       const localBlocks = all.filter(b => b.level == level || (Array.isArray(b.level) && b.level.includes(level)))
 
-      // 3) Merge: API (si hay) sobre LOCAL, y LOCAL agrega lo que falte
+      // 3) Merge: LOCAL es autoridad; API solo rellena faltantes
       const byName = new Map()
-      for (const b of apiBlocks) if (b?.name) byName.set(b.name, b)
-      for (const b of localBlocks) if (b?.name && !byName.has(b.name)) byName.set(b.name, b)
-      const merged = Array.from(byName.values())
+      for (const b of localBlocks) if (b?.name) byName.set(b.name, b)
+      for (const b of apiBlocks) if (b?.name && !byName.has(b.name)) byName.set(b.name, b)
+      let merged = Array.from(byName.values())
       if (!merged.length) throw new Error('No blocks for level')
+      // Auto-incluir modelos por nivel (GLB con posiciones embebidas) si faltan en JSON
+      try {
+        const base2 = (import.meta.env.BASE_URL || '/').replace(/\/$/, '')
+        const autoUrl = `${base2}/config/autoIncludeByLevel.json`
+        const autoRes = await fetch(autoUrl)
+        if (autoRes.ok) {
+          const auto = await autoRes.json()
+          const extras = Array.isArray(auto?.[level]) ? auto[level] : []
+          const namesSet = new Set(merged.filter(b=>b?.name).map(b=>b.name))
+          for (const n of extras) {
+            if (!namesSet.has(n)) {
+              merged.push({ name: n, x: 0, y: 0, z: 0, level, role: 'default', auto: true })
+            }
+          }
+        }
+      } catch { /* no-op */ }
       const data = { blocks: merged }
       console.log(`Level ${level}: API ${apiBlocks.length} + Local ${localBlocks.length} -> Merged ${merged.length}`)
 

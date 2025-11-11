@@ -14,8 +14,8 @@ export default class Enemy {
     this.playerRef    = playerRef
     this.resources    = this.experience.resources
 
-    this.baseSpeed = 0.55
-    this.runSpeed  = 0.95
+    this.baseSpeed = 0.65
+    this.runSpeed  = 1.10
     this.speed     = this.baseSpeed
 
     this.bodyY   = 0.9
